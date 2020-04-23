@@ -48,7 +48,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	* Thêm tất cả các file chưa add vào GIT quản lý.   
 	```
 	$ git add *    
-	```  
+	``` hoặc ```$ git add .```  
 	![Imgur](https://i.imgur.com/RT4OaTL.png)  
 
 ### 5. "git commit":
