@@ -121,3 +121,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	kiểm tra và thấy có 1 branch mới được tạo nhưng ta vẫn ở branch cũ master.
 	![Imgur](https://i.imgur.com/icc2Kak.png)
 * Để chuyển brank, truy cập kiểm tra mã nguồn trong branch đó để làm việc: **"git checkout tên_branch"**
+	![Imgur](https://i.imgur.com/zYuQ65R.png)
+	* ngoài ra ta có thể làm tắt vừa tạo vừa chuyển qua branch mới:  
+	```
+	$ git checkout -b feature/dog-class    
+	``` 
