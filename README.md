@@ -123,6 +123,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 * Để chuyển brank, truy cập kiểm tra mã nguồn trong branch đó để làm việc: **"git checkout tên_branch"**
 	![Imgur](https://i.imgur.com/zYuQ65R.png)
 	* ngoài ra ta có thể làm tắt vừa tạo vừa chuyển qua branch mới:  
-	```
-	$ git checkout -b feature/dog-class    
-	``` 
+	```  
+	$ git checkout -b feature/dog-class     
+	```   
+* Ta thấy khi về branch branch feature/dog-class lúc này ta comment module export của Dog.js lại. nhưng khi quay về branch master thì mọi thứ còn nguyên không thay đổi => code sẽ thay đổi tùy theo brank mà ta code cho tới khi ta hài lòng thì mới ghép branch phụ vào master.  
