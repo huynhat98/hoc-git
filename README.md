@@ -138,5 +138,24 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 		![Imgur](https://i.imgur.com/lNnPqRV.png)
 
+### 8. Git Reset
+
+* **Bỏ tập tin ra khỏi Staging Area** (chuyển 1 file đã git add rồi về trạng thái trước đó):
+	* Nếu bạn đã đưa một tập tin nào đó vào Staging Area nhưng bây giờ bạn muốn loại bỏ nó ra khỏi đây để không phải bị commit theo thì có thể sử dụng lệnh **"git reset HEAD tên_file"**.   
+	![Imgur](https://i.imgur.com/UmnOdos.png)  
+* **Undo commit**
+	* **```git reset --soft id_gitCommit```** nó sẽ quay lại commit có id mà ta chỉ định và nó sẽ mở, hủy đi tất cả các commit mà bạn đã commit sau cái commit mà bạn đã chỉ định và các file sẽ trở về staging Area (đã được add nhưng chưa commit lên lan9). VD: Ta đã commit với nhãn là lan9 giờ ta sẽ trở về lúc commit mà nhãn là lan8 bằng cách dùng lệnh trên và đánh id của commit lan8 vào nó sẽ trở về commit lan8 và hủy commit lan9.    
+	![Imgur](https://i.imgur.com/w0nUQGp.png)   
+
+		![Imgur](https://i.imgur.com/0IzX9h6.png)
+
+		![Imgur](https://i.imgur.com/jl1dbTu.png)
+		
+		![Imgur](https://i.imgur.com/4AMkChn.png)
 	
+	* **```git reset --mixed id_gitCommit```** cũng tương tự như reset --soft trên nhưng chỉ khác là các file được add trong lan8 de lên lan9 không còn ở trong staging Area nữa mà trở về working drectory luôn.
+	![Imgur](https://i.imgur.com/FaBFzDu.png)
+	
+	* **```git reset --hard id_gitCommit```** tương tự nhưng trạng thái của commit sẽ biến mất sạch sẽ và không còn file nào trong staging area hoặc working directory luôn.
+		
 	
