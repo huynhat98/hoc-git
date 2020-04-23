@@ -133,5 +133,10 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	![Imgur](https://i.imgur.com/1JMOzcq.png)
 
 * Khi ta đã code thành công, đã hài lòng ở các branch phụ, ta sẽ tiến hành gộp (merge) nó vào branch chính (master)(kéo những thay đổi từ 1 branch khác vào 1 branch nào đấy không nhất thiết phải là master).
-	* merge theo trình tự đang ở branch A thì merge branch B vào A
+	* merge theo trình tự đang ở branch A thì merge branch B vào A (vd ta muốn merge branch feature/dog-class vào branch chính master để đồng bộ thì ta kiểm tra xem ta đã đứng ở branch master chưa nếu chưa thì checkout về master sau đó dùng lệnh merge branch feature/dog-class bây giờ dữ liệu code đã được đồng bộ từ feature/dog-class vào master và code 2 bên là giống nhau).  
+	```$ git merge feature/dog-class```
+
+		![Imgur](https://i.imgur.com/lNnPqRV.png)
+
+	
 	
