@@ -127,3 +127,11 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	$ git checkout -b feature/dog-class     
 	```   
 * Ta thấy khi về branch branch feature/dog-class lúc này ta comment module export của Dog.js lại. nhưng khi quay về branch master thì mọi thứ còn nguyên không thay đổi => code sẽ thay đổi tùy theo brank mà ta code cho tới khi ta hài lòng thì mới ghép branch phụ vào master.  
+
+	![Imgur](https://i.imgur.com/JfF7eTt.png)
+
+	![Imgur](https://i.imgur.com/1JMOzcq.png)
+
+* Khi ta đã code thành công, đã hài lòng ở các branch phụ, ta sẽ tiến hành gộp (merge) nó vào branch chính (master)(kéo những thay đổi từ 1 branch khác vào 1 branch nào đấy không nhất thiết phải là master).
+	* merge theo trình tự đang ở branch A thì merge branch B vào A
+	
