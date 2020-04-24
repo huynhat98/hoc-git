@@ -107,6 +107,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	![Imgur](https://i.imgur.com/03GTCgr.png)
 
 ### 7. BRANCH – Kỹ thuật phân nhánh
+![Imgur](https://i.imgur.com/6a1IFPH.png)
+
 ![Imgur](https://i.imgur.com/ZnAidkS.png)  
 
 ![Imgur](https://i.imgur.com/XadmsqW.png)  
@@ -177,3 +179,43 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 ### 10. gitignore
 * .gitignore là 1 file nằm trong project của mình. mục đích là để ta có thể bỏ qua 1 số file mà ta không muốn commit, nó sẽ không hiển thị ra mỗi khi ta gõ git status (ví dụ khi dùng node packet thì sẽ có file node module và file này khá nặng và chỉ là source các module, ta khai báo file này vào .gitignore thì nó sẽ không commit theo, khi đẩy code lên remote server thì nó sẽ không tồn tại trên đó mà ta chỉ commit file package.json file này sẽ lưu toàn bộ cấu hình của node module. lúc cần thì kéo về và gõ lệnh npm install là các package lại được cài lại và file node modules lại tồn tại.
+	* khởi tạo project node và download chalk module để demo:  
+	![Imgur](https://i.imgur.com/0uC47NN.png)
+	
+		![Imgur](https://i.imgur.com/jISm2ZS.png)
+		
+		![Imgur](https://i.imgur.com/TOrClSb.png)  
+
+		![Imgur](https://i.imgur.com/7wpklAi.png)
+
+	* Dùng git status ta có thể thấy node_modules đang hiện trong working directory.  
+	![Imgur](https://i.imgur.com/qqTXlyB.png)  
+	* Tạo file .gitignore và khai báo node_modules.
+	![Imgur](https://i.imgur.com/GnGuV7j.png)  
+
+		![Imgur](https://i.imgur.com/31TK0m3.png)
+
+		![Imgur](https://i.imgur.com/QoXjZcT.png)  
+	* Lúc này ta gõ lại git status lại và thấy node_modules đã biến mất khỏi local repository
+	![Imgur](https://i.imgur.com/7bdycCF.png)  
+
+### 11. Github
+![Imgur](https://i.imgur.com/5Dd7ii6.png)   
+
+* Đa phần vẫn nhầm lẫn Git vs GitHub là một bởi vì cứ nói đến Git là nghĩ tới GitHub. Đó là một sự hiểu lầm vì Git  là tên gọi của một mô hình hệ thống, các máy tính có thể clone lại mã nguồn từ một repository , còn GitHub là tên của một công ty cũng cấp dịch vụ máy chủ repository công cộng, mỗi người có thể truy cập vào website trang chủ để tạo tài khoản trên đó và tạo ra kho chứa source của riêng mình khi làm việc.
+	* [https://github.com/](https://github.com/ "Link to Githup")
+* Tạo repository trên Github và làm việc.
+	![Imgur](https://i.imgur.com/GYsotUO.png)
+
+	![Imgur](https://i.imgur.com/Jr71f0z.png)
+* Demo cách đưa code lên Githup cơ bản.
+	* Copy link dưới đây trong repository mới tạo.
+	![Imgur](https://i.imgur.com/ueAcQUY.png)  
+	* Thêm remote repository: Trường hợp bạn cần thêm một cái remote để lấy dữ liệu khi cần thì có thể sử dụng lệnh ```$ git remote add origin linkCopyRespository```   
+		VD: ```$ git remote add origin https://github.com/byenet/hoc-git.git``` 
+	![Imgur](https://i.imgur.com/ltjzjLh.png)    
+	Cái origin trong đoạn đó chính là tên remote repository. Mặc định khi clone một repository thì nó tự đặt tên là origin.  
+
+	* Đổi tên remote: Nếu bạn không thích tên origin thì có thể đổi tên nó lại nó bằng tên khác cho dễ quản lý nếu như bạn có nhiều remote trong một dự án với lệnh ```git remote rename ten_cu ten_moi```. Ví dụ mình cần đổi từ origin sang thach thì sẽ đổi như sau: 
+	![Imgur](https://i.imgur.com/x0BOr1x.png)
+	* **git push -u** (nếu chưa sync với repository lần nào thì dùng lệnh này, còn đã sync trước đây rồi thì chỉ cẩn dùng lệnh git push) để đẩy các tập tin đã được commit lên Github. Lưu ý rằng bạn sẽ cần nhập tài khoản và mật khẩu Github.
