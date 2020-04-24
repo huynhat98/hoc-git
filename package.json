@@ -1,0 +1,14 @@
+{
+  "name": "1-commit",
+  "version": "1.0.0",
+  "description": "<br/>\r ## *Nhật Huy*\r ![Imgur](https://i.imgur.com/j5awM87.png)",
+  "main": "Cat.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.0.0"
+  }
+}

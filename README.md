@@ -37,7 +37,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 * **Staging Area** là gì?
  * **Staging Area** nghĩa là khu vực sẽ lưu trữ những thay đổi của bạn trên tập tin để nó có thể được commit, vì muốn commit tập tin nào thì tập tin đó phải nằm trong Staging Area. Một tập tin khi nằm trong Staging Area sẽ có trạng thái là Stagged (xem thêm ở dưới).
 ![Imgur](https://i.imgur.com/CIRSnlT.png)  
-	Và để đưa một tập tin vào Staging Area thì bạn sẽ cần phải sử dụng lệnh git add tên_file mà mình đã có ví dụ ở phần trước.
+	Và để đưa một tập tin vào Staging Area thì bạn sẽ cần phải sử dụng lệnh git add tên_file mà mình đã có ví dụ phía dưới.
 ### 4. Tạo local repository bằng "git add":
 * git add README.md  
 	* Thêm file README.md vào cho GIT quản lý (Staging Area).  
@@ -91,7 +91,9 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	```
 
 	![Imgur](https://i.imgur.com/ePcbXRY.png)  
+
 	![Imgur](https://i.imgur.com/7oclN4n.png)
+
 	![Imgur](https://i.imgur.com/PvMV6U2.png)
 
 * Dùng lệnh "gitk" hoặc các extension hỗ trợ của vs code nếu muốn xem bằng GUI.  
@@ -144,7 +146,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	* Nếu bạn đã đưa một tập tin nào đó vào Staging Area nhưng bây giờ bạn muốn loại bỏ nó ra khỏi đây để không phải bị commit theo thì có thể sử dụng lệnh **"git reset HEAD tên_file"**.   
 	![Imgur](https://i.imgur.com/UmnOdos.png)  
 * **Undo commit**
-	* **```git reset --soft id_gitCommit```** nó sẽ quay lại commit có id mà ta chỉ định và nó sẽ mở, hủy đi tất cả các commit mà bạn đã commit sau cái commit mà bạn đã chỉ định và các file sẽ trở về staging Area (đã được add nhưng chưa commit lên lan9). VD: Ta đã commit với nhãn là lan9 giờ ta sẽ trở về lúc commit mà nhãn là lan8 bằng cách dùng lệnh trên và đánh id của commit lan8 vào nó sẽ trở về commit lan8 và hủy commit lan9.    
+	* **```git reset --soft commit_Id```** nó sẽ quay lại commit có id mà ta chỉ định và nó sẽ mở, hủy đi tất cả các commit mà bạn đã commit sau cái commit mà bạn đã chỉ định và các file sẽ trở về staging Area (đã được add nhưng chưa commit lên lan9). VD: Ta đã commit với nhãn là lan9 giờ ta sẽ trở về lúc commit mà nhãn là lan8 bằng cách dùng lệnh trên và đánh id của commit lan8 vào nó sẽ trở về commit lan8 và hủy commit lan9.    
 	![Imgur](https://i.imgur.com/w0nUQGp.png)   
 
 		![Imgur](https://i.imgur.com/0IzX9h6.png)
@@ -153,9 +155,25 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 		
 		![Imgur](https://i.imgur.com/4AMkChn.png)
 	
-	* **```git reset --mixed id_gitCommit```** cũng tương tự như reset --soft trên nhưng chỉ khác là các file được add trong lan8 de lên lan9 không còn ở trong staging Area nữa mà trở về working drectory luôn.
+	* **```git reset --mixed commit_Id```** cũng tương tự như reset --soft trên nhưng chỉ khác là các file được add trong lan8 de lên lan9 không còn ở trong staging Area nữa mà trở về working drectory luôn (nghĩa là các file sẽ trở về luôn trạng thái ở lần 8 vì nó không tồn tại trong working drectory luôn nên chắc chắn mọi thay đổi sẽ quay về).
 	![Imgur](https://i.imgur.com/FaBFzDu.png)
 	
-	* **```git reset --hard id_gitCommit```** tương tự nhưng trạng thái của commit sẽ biến mất sạch sẽ và không còn file nào trong staging area hoặc working directory luôn.
-		
+	* **```git reset --hard commit_Id```** tương tự nhưng trạng thái của commit sẽ biến mất sạch sẽ và không còn file nào trong staging area hoặc working directory luôn.
+	![Imgur](https://i.imgur.com/pjXPpPB.png)	
 	
+### 9. Git revert
+* nghĩa là trả lại revert lại trạng thái lúc trước (vd: viết ra 1 dòng mà thấy sai không ok thì ta có thể revert lại, quay lại trạng thái trước khi có dòng đấy, xóa nó đi chẳng hạn.). Dùng trong trường hợp 1 commit cách đây vài commit mà muốn bỏ nó đi (bỏ đi những thay đổi mà lần commit đó đã commit đã thay đổi) => nó rất nguy hiểm nên tránh dùng. (dùng reset thì tất cả commit sau nó bị mất đi. Trong trường hợp không muốn nó bị mất đi mà chỉ muốn reset lại 1 commit trong số đó thì ta dùng revert). Nó sẽ tạo ra 1 commit mới đảo ngược lại commit mình muốn revert (dùng chính id commit mà ta muốn revert về).  
+	* **```git revert commit_Id```**  
+
+	![Imgur](https://i.imgur.com/2kMDivn.png)
+
+	![Imgur](https://i.imgur.com/2tRhD3m.png)
+
+	![Imgur](https://i.imgur.com/GiGqsaN.png)  
+
+	* Dùng :wq như vi để lưu ta kiểm tra lại và thu được một commit revert từ commit hồi nãy.
+	
+	![Imgur](https://i.imgur.com/DLWOQLn.png)
+
+### 10. gitignore
+* .gitignore là 1 file nằm trong project của mình. mục đích là để ta có thể bỏ qua 1 số file mà ta không muốn commit, nó sẽ không hiển thị ra mỗi khi ta gõ git status (ví dụ khi dùng node packet thì sẽ có file node module và file này khá nặng và chỉ là source các module, ta khai báo file này vào .gitignore thì nó sẽ không commit theo, khi đẩy code lên remote server thì nó sẽ không tồn tại trên đó mà ta chỉ commit file package.json file này sẽ lưu toàn bộ cấu hình của node module. lúc cần thì kéo về và gõ lệnh npm install là các package lại được cài lại và file node modules lại tồn tại.
