@@ -232,4 +232,6 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 * **git pull**  
 	* Nếu bạn đang làm việc chung với cả một team, bạn sẽ nhận thấy, khi repo được cập nhật lên GitHub, thì các thay đổi sẽ không còn local nữa. Nếu đúng như vậy, bạn có thể sử dụng **`git pull origin branch_name`** để pull các thay đổi gần nhất từ remote branch đó.  
 		* Ở bên repo chính ta tiến hành commit và push cập nhật lại remote repo.  
-		!
+		![Imgur](https://i.imgur.com/wHVDIZv.png)
+		* Ở repo local mà ta clone ra ta tiến hành git pull lấy cập nhật mới nhất từ repo remote vừa được update kia về.
+		![Imgur](https://i.imgur.com/7KKTkuh.png)
