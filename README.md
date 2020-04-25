@@ -1,7 +1,9 @@
 # <span style = "color:green;  text-align: center;display: block; text-transform: uppercase;">How to use git</span>
-<br/>
-## *Nhật Huy*
-![Imgur](https://i.imgur.com/j5awM87.png)  
+<br/>  
+
+## *Nhật Huy* 
+  
+![Imgur](https://i.imgur.com/j5awM87.png)    
 
 ### 1. Thiết lập chứng thực cá nhân
 ```
@@ -13,19 +15,15 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 ### 2. "git init":
 * Lệnh khởi tạo sử dụng GIT cho thư mục hiện tại.  
-	* ```
-	$ git init
-	```
-### 3. "git status": 
+	* ```$ git init```  
+### 3. "git status":   
 
 ![Imgur](https://i.imgur.com/MXClLDR.png)
 
 * Dùng để xem status của git project.  
- 	```
-	$ git status
-	```
+ 	```$ git status```  
 	* Phần tử màu đỏ thì ở working Drectory (untracked) (working Drectory là thư mục local ta đang làm việc).
-![Imgur](https://i.imgur.com/PM20gaP.png)
+![Imgur](https://i.imgur.com/PM20gaP.png)  
 	* Phần tử màu xanh thì ở Staging Area (tracked).
 ![Imgur](https://i.imgur.com/DqUV6pK.png)  
 
@@ -41,25 +39,19 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 ### 4. Tạo local repository bằng "git add":
 * git add README.md  
 	* Thêm file README.md vào cho GIT quản lý (Staging Area).  
-	```
-	$ git add README.md
-	```  
-* git add *
+	```$ git add README.md```    
+* git add *  
 	* Thêm tất cả các file chưa add vào GIT quản lý.   
-	```
-	$ git add *    
-	``` hoặc ```$ git add .```  
+	```$ git add *``` hoặc ```$ git add .```  
 	![Imgur](https://i.imgur.com/RT4OaTL.png)  
 
 ### 5. "git commit":
 * **commit:** nghĩa là một hành động để Git lưu lại một bản chụp (snapshot) của các sự thay đổi trong thư mục làm việc, và các tập tin và thư mục được thay đổi đã phải nằm trong Staging Area. Mỗi lần commit nó sẽ được lưu lại lịch sử chỉnh sửa của mã nguồn kèm theo tên và địa chỉ email của người commit. Ngoài ra trong Git bạn cũng có thể khôi phục lại tập tin trong lịch sử commit của nó để chia cho một phân nhánh (branch) khác, đây là mấu chốt của việc bạn sẽ dễ dàng khôi phục lại các thay đổi trước đó mà mình có giới thiệu qua ở phần giới thiệu serie này.  
 
 * **"git commit -m":** Lệnh commit sẽ có cấu trúc git commit -m "Lời nhắn", lúc này tất cả các tập đang trong trạng thái tracked (file mới) hoặc một tập tin đã được tracked nhưng có một sự thay đổi mới thì sẽ được commit.   
-	* ```
-	$ git commit -m 'Add_all_file'
-	```  
+	* ```$ git commit -m 'Add_all_file'```      
 
-	![Imgur](https://i.imgur.com/hzKO9X6.png)   
+	![Imgur](https://i.imgur.com/hzKO9X6.png)    
 
 	![Imgur](https://i.imgur.com/eYFDIOp.png)  
 
@@ -67,28 +59,20 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 ### 6. Log  
 * Để xem lịch sử của các lần commit trước đó, bạn sử dụng lệnh "git log".  
-	* ```
-	$ git log    
-	```  
+	* ```$ git log```  
 
  	![Imgur](https://i.imgur.com/lOqFbuO.png)  
 * Dùng "git log -p" để xem chi tiết.  
-	* ```
-	$ git log -p    
-	```  
+	* ```$ git log -p```  
 
 	![Imgur](https://i.imgur.com/s61mJ0y.png)
 
 * Dùng "git show" với id của lần commit để xem chi tiết commit đó.  
-	* ```
-	$ git show d72845cbd2f5856a7815385b03648356affb162d    
-	```
+	* ```$ git show d72845cbd2f5856a7815385b03648356affb162d```
 
 	![Imgur](https://i.imgur.com/6CwKIvX.png)  
 * Dùng "git diff" để xem những file đã được thay đổi khác gì với lúc chưa thay đổi (Modified (đã chỉnh sửa) + là đã thêm mới, - là bỏ bớt đi).
-	* ```
-	$ git diff    
-	```
+	* ```$ git diff```
 
 	![Imgur](https://i.imgur.com/ePcbXRY.png)  
 
@@ -97,9 +81,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	![Imgur](https://i.imgur.com/PvMV6U2.png)
 
 * Dùng lệnh "gitk" hoặc các extension hỗ trợ của vs code nếu muốn xem bằng GUI.  
-	* ```
-	$ gitk    
-	```
+	* ```$ gitk```
 
 	![Imgur](https://i.imgur.com/vVQ36li.png)  
 	* Dùng extension GitLens của VScode.  
@@ -116,9 +98,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 * vd: Khi ta làm 1 project có nhiều trang nhiều chức năng, thường mỗi khi viết 1 chức năng nào đó ta sẽ làm ra 1 branch mới để nó không bị ảnh hưởng đến nhánh chính master, cho đến khi ta code hoàn thành xong chức năng không có lỗi và hài lòng với thay đổi, những commit trên các nhánh khác thì lúc đó ta mới tiến hành ghép vào nhánh master...đảm bảo cho nhánh master không bị lỗi gì. cũng tương đi làm leader cũng chia project ra những branch khác nhau tùy với chức năng mà thành viên viết rồi quản lý các commit của các thành viên đến khi nào không lỗi lầm thì mới ghép vào nhánh master... giúp quản lý dự án tốt hơn.
 
 * Cách tạo 1 branch: **"git branch tên_branch"**
-	* ```
-	$ git branch feature/dog-class    
-	```  
+	* ```$ git branch feature/dog-class```  
  
 	![Imgur](https://i.imgur.com/0A8nLoN.png)  
 
@@ -127,9 +107,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 * Để chuyển brank, truy cập kiểm tra mã nguồn trong branch đó để làm việc: **"git checkout tên_branch"**
 	![Imgur](https://i.imgur.com/zYuQ65R.png)
 	* ngoài ra ta có thể làm tắt vừa tạo vừa chuyển qua branch mới:  
-	```  
-	$ git checkout -b feature/dog-class     
-	```   
+	```$ git checkout -b feature/dog-class```   
 * Ta thấy khi về branch branch feature/dog-class lúc này ta comment module export của Dog.js lại. nhưng khi quay về branch master thì mọi thứ còn nguyên không thay đổi => code sẽ thay đổi tùy theo brank mà ta code cho tới khi ta hài lòng thì mới ghép branch phụ vào master.  
 
 	![Imgur](https://i.imgur.com/JfF7eTt.png)
@@ -211,11 +189,15 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 * Demo cách đưa code lên Githup cơ bản.
 	* Copy link dưới đây trong repository mới tạo.
 	![Imgur](https://i.imgur.com/ueAcQUY.png)  
-	* Thêm remote repository: Trường hợp bạn cần thêm một cái remote để lấy dữ liệu khi cần thì có thể sử dụng lệnh ```$ git remote add origin linkCopyRespository```   
+	* **Thêm remote repository**: Trường hợp bạn cần thêm một cái remote để lấy dữ liệu khi cần thì có thể sử dụng lệnh ```$ git remote add origin linkCopyRespository```   
 		VD: ```$ git remote add origin https://github.com/byenet/hoc-git.git``` 
 	![Imgur](https://i.imgur.com/ltjzjLh.png)    
 	Cái origin trong đoạn đó chính là tên remote repository. Mặc định khi clone một repository thì nó tự đặt tên là origin.  
 
-	* Đổi tên remote: Nếu bạn không thích tên origin thì có thể đổi tên nó lại nó bằng tên khác cho dễ quản lý nếu như bạn có nhiều remote trong một dự án với lệnh ```git remote rename ten_cu ten_moi```. Ví dụ mình cần đổi từ origin sang thach thì sẽ đổi như sau: 
+	* **Đổi tên remote**: Nếu bạn không thích tên origin thì có thể đổi tên nó lại nó bằng tên khác cho dễ quản lý nếu như bạn có nhiều remote trong một dự án với lệnh ```git remote rename ten_cu ten_moi```. Ví dụ mình cần đổi từ origin sang thach thì sẽ đổi như sau: 
 	![Imgur](https://i.imgur.com/x0BOr1x.png)
 	* **git push -u** (nếu chưa sync với repository lần nào thì dùng lệnh này, còn đã sync trước đây rồi thì chỉ cẩn dùng lệnh git push) để đẩy các tập tin đã được commit lên Github. Lưu ý rằng bạn sẽ cần nhập tài khoản và mật khẩu Github.
+	![Imgur](https://i.imgur.com/v7xpv02.png)  
+	trên github đã được sync.  
+	![Imgur](https://i.imgur.com/H96m5vP.png)  
+	* Nếu đã sync với repository trước đây thì ta dùng ```git push``` để đẩy code lên.
