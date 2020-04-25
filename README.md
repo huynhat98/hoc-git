@@ -33,7 +33,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	![Imgur](https://i.imgur.com/2LgYo4V.png)
 
 * **Staging Area** là gì?
- * **Staging Area** nghĩa là khu vực sẽ lưu trữ những thay đổi của bạn trên tập tin để nó có thể được commit, vì muốn commit tập tin nào thì tập tin đó phải nằm trong Staging Area. Một tập tin khi nằm trong Staging Area sẽ có trạng thái là Stagged (xem thêm ở dưới).
+ * **Staging Area** nghĩa là khu vực sẽ lưu trữ những thay đổi của bạn trên tập tin để nó có thể được commit, vì muốn commit tập tin nào thì tập tin đó phải nằm trong Staging Area. Một tập tin khi nằm trong Staging Area sẽ có trạng thái là Stagged (xem thêm ở dưới).  
 ![Imgur](https://i.imgur.com/CIRSnlT.png)  
 	Và để đưa một tập tin vào Staging Area thì bạn sẽ cần phải sử dụng lệnh git add tên_file mà mình đã có ví dụ phía dưới.
 ### 4. Tạo local repository bằng "git add":
@@ -200,4 +200,5 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	![Imgur](https://i.imgur.com/v7xpv02.png)  
 	trên github đã được sync.  
 	![Imgur](https://i.imgur.com/H96m5vP.png)  
-	* Nếu đã sync với repository trước đây thì ta dùng ```git push``` để đẩy code lên.
+	* Nếu đã sync với repository trước đây thì ta dùng ```git push``` để đẩy code lên.  
+	![Imgur](https://i.imgur.com/eUg3QC6.png)
