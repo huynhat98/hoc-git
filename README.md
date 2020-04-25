@@ -7,14 +7,14 @@
 
 ### 1. Thiết lập chứng thực cá nhân
 ```
-$ git config --global user.name "Nhat Huy" 
+$ git config --global user.name "byenet" 
 ```  
 ``` 
 $ git config --global user.email "nhathuynguyenho@gmail.com"
 ```
 
 ### 2. "git init":
-* Lệnh khởi tạo sử dụng GIT cho thư mục hiện tại.  
+* Lệnh khởi tạo sử dụng GIT repository cho thư mục hiện tại.  
 	* ```$ git init```  
 ### 3. "git status":   
 
@@ -201,8 +201,12 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	trên github đã được sync.  
 	![Imgur](https://i.imgur.com/H96m5vP.png)  
 	* Nếu đã sync với repository trước đây thì ta dùng ```git push``` để đẩy code lên.  
-	![Imgur](https://i.imgur.com/eUg3QC6.png) 
- 
+	![Imgur](https://i.imgur.com/eUg3QC6.png)  
+* **Xóa remote repository:**  
+`$ git remote rm remote_name`  
+
+	![Imgur](https://i.imgur.com/plPWHyB.png)
+	
 ### 12. Git credential config  
 * Cài đặt Git credential helper. Một số Git clound hỗ trợ kết nối đến bằng HTTP, mỗi khi tương tác với các Git clound này cần sử dụng username/password. Bạn có thể lưu trữ lại chứng nhận thay cho việc phải cung cấp username/password. Git credential Manager sẽ quản lý các chứng nhận đó. 
 	* `git config --global credential.helper "cache --timeout=18000"`  
@@ -210,4 +214,22 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 		  
 	![Imgur](https://i.imgur.com/ZcGxhiX.png)
 	
-	![Imgur](https://i.imgur.com/qOQBh7n.png)
+	![Imgur](https://i.imgur.com/qOQBh7n.png)  
+
+### 13. Git clone & pull  
+![Imgur](https://i.imgur.com/EB876Nv.png)   
+  
+* **git clone**  
+	* Lệnh này sẽ sao chép toàn bộ dữ liệu trên repository và sao chép luôn các thiết lập về repository, tức là nó sẽ tự động tạo một master branch trên máy tính của bạn. Lệnh này chỉ nên sử dụng khi bạn cần tạo mới một Git mới trên máy tính với toàn bộ dữ liệu và thiết lập của một remote repository. (khi repository trống và ta clone repository của người khác về dùng, nó sẽ clone luôn cả những lần commit của repository đó, clone toàn bộ về...khi làm việc teamwork đây là cách phổ biến, cho lần đầu đưa dự án vào quản lý hoặc khi bạn đi làm và join và dự án các bạn cũng sẽ thực hiện việc clone project đã có của team trên server về máy tính của các bạn.).
+	* Copy link remote repository để tiến hành clone.  
+	![Imgur](https://i.imgur.com/t1ZWicw.png)  
+	* Tại repository muốn clone về dùng lệnh **git clone** để tiến hành clone remote repository về repository của mình.
+	`git clone link_remoteRepository`  
+
+		![Imgur](https://i.imgur.com/VUMudvL.png)  
+		
+		![Imgur](https://i.imgur.com/CxOHpUB.png)  
+* **git pull**  
+	* Nếu bạn đang làm việc chung với cả một team, bạn sẽ nhận thấy, khi repo được cập nhật lên GitHub, thì các thay đổi sẽ không còn local nữa. Nếu đúng như vậy, bạn có thể sử dụng **`git pull origin branch_name`** để pull các thay đổi gần nhất từ remote branch đó.  
+		* Ở bên repo chính ta tiến hành commit và push cập nhật lại remote repo.  
+		!
