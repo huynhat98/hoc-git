@@ -206,4 +206,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 ### 12. Git credential config  
 * Cài đặt Git credential helper. Một số Git clound hỗ trợ kết nối đến bằng HTTP, mỗi khi tương tác với các Git clound này cần sử dụng username/password. Bạn có thể lưu trữ lại chứng nhận thay cho việc phải cung cấp username/password. Git credential Manager sẽ quản lý các chứng nhận đó. 
 	* `git config --global credential.helper "cache --timeout=18000"`  
-		* cache --timeout=18000 là dữ liệu được lưu trong cache ram với thời gian là 18000 ms (5 tiếng) nghĩa là sau 5 tiếng mới phải đánh lại mật khẩu một lần.
+		* cache --timeout=18000 là dữ liệu được lưu trong cache ram với thời gian là 18000 ms (5 tiếng) nghĩa là sau 5 tiếng mới phải đánh lại mật khẩu một lần. 
+		  
+	![Imgur](https://i.imgur.com/ZcGxhiX.png)
+	
+	![Imgur](https://i.imgur.com/qOQBh7n.png)
