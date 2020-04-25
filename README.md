@@ -95,7 +95,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 ![Imgur](https://i.imgur.com/XadmsqW.png)  
 
-* vd: Khi ta làm 1 project có nhiều trang nhiều chức năng, thường mỗi khi viết 1 chức năng nào đó ta sẽ làm ra 1 branch mới để nó không bị ảnh hưởng đến nhánh chính master, cho đến khi ta code hoàn thành xong chức năng không có lỗi và hài lòng với thay đổi, những commit trên các nhánh khác thì lúc đó ta mới tiến hành ghép vào nhánh master...đảm bảo cho nhánh master không bị lỗi gì. cũng tương đi làm leader cũng chia project ra những branch khác nhau tùy với chức năng mà thành viên viết rồi quản lý các commit của các thành viên đến khi nào không lỗi lầm thì mới ghép vào nhánh master... giúp quản lý dự án tốt hơn.
+* vd: Khi ta làm 1 project có nhiều trang nhiều chức năng, thường mỗi khi viết 1 chức năng nào đó ta sẽ làm ra 1 branch mới để nó không bị ảnh hưởng đến nhánh chính master, cho đến khi ta code hoàn thành xong chức năng không có lỗi và hài lòng với thay đổi những commit trên các nhánh khác thì lúc đó ta mới tiến hành ghép vào nhánh master...đảm bảo cho nhánh master không bị lỗi gì. cũng như đi làm leader cũng chia project ra những branch khác nhau tùy với chức năng mà thành viên viết rồi quản lý các commit của các thành viên đến khi nào không lỗi lầm thì mới ghép vào nhánh master... giúp quản lý dự án tốt hơn.
 
 * Cách tạo 1 branch: **"git branch tên_branch"**
 	* ```$ git branch feature/dog-class```  
@@ -201,4 +201,9 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	trên github đã được sync.  
 	![Imgur](https://i.imgur.com/H96m5vP.png)  
 	* Nếu đã sync với repository trước đây thì ta dùng ```git push``` để đẩy code lên.  
-	![Imgur](https://i.imgur.com/eUg3QC6.png)
+	![Imgur](https://i.imgur.com/eUg3QC6.png) 
+ 
+### 12. Git credential config  
+* Cài đặt Git credential helper. Một số Git clound hỗ trợ kết nối đến bằng HTTP, mỗi khi tương tác với các Git clound này cần sử dụng username/password. Bạn có thể lưu trữ lại chứng nhận thay cho việc phải cung cấp username/password. Git credential Manager sẽ quản lý các chứng nhận đó. 
+	* `git config --global credential.helper "cache --timeout=18000"`  
+		* cache --timeout=18000 là dữ liệu được lưu trong cache ram với thời gian là 18000 ms (5 tiếng) nghĩa là sau 5 tiếng mới phải đánh lại mật khẩu một lần.
