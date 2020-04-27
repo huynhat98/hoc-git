@@ -258,6 +258,14 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	![Imgur](https://i.imgur.com/1rBXibA.png)
 	
 #### b. push lên remote repo (github)
+* **Pushing**
+	* Khi push từ local repository lên remote repository, cần làm sao cho nhánh đã push sẽ được merge fast-forward. Nếu phát sinh xung đột, push sẽ bị từ chối.  
+	* Trường hợp muốn chia sẻ nhánh đã tạo tại local repository, cần phải push rõ ràng. Cho nên, miễn là không push thì sẽ không gây ảnh hưởng cho remote repository, và có thể tự do tạo branch của chính mình. 
+	
+		![Imgur](https://i.imgur.com/OcEQF4L.png)  
+
+		![Imgur](https://i.imgur.com/udVOuSh.png) 
+
 * Dùng lệnh **`git push remote_origin branch_name`** để push code sau khi commit xong lên github.
 	* github khi ta chưa push branch lên (chỉ có 1 branch master).  
 	![Imgur](https://i.imgur.com/4Zqvo4y.png)  
@@ -266,7 +274,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	* github khi ta push branch lên (ngoài branch master còn có thêm branch feature/horse-class.  
 	![Imgur](https://i.imgur.com/EzGRFwC.png)  
 
-#### c. Creat a pull request on github and Review code online
+#### c. Creat a pull request on github and Review code, approve the pull request and merge code online
 * Mình sẽ tạo 1 yêu cầu để được pull code cho leader biết mình đã commit. sau khi leader nhận được sẽ tiến hành review code này xem đủ yêu cầu được pull chưa. Ta tạo pull request bắng giao diện như các hình dưới đây. 
    
 * **Nhân viên tạo pull request.**  
@@ -303,7 +311,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	
 	![Imgur](https://i.imgur.com/E8wVMcu.png)
 
-* **Leader review lại và nếu ổn thì merge vào master**  
+* **Leader review lại và nếu ổn thì approve the pull request và merge code vào master**  
 
 	![Imgur](https://i.imgur.com/4GmcrOj.png)  
 
@@ -317,8 +325,44 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 	![Imgur](https://i.imgur.com/2dIK9L6.png)  
 
-	![Imgur](https://i.imgur.com/SgH7CSi.png)
+	![Imgur](https://i.imgur.com/SgH7CSi.png)  
+
+#### d. fetch branch into local to test code offline (optional)
+* Review code online thì leader chỉ xem được code có sạch không, xem sơ về logic code, cách code,... để mà xem và test được code xem nó có chạy đúng không, chạy ok chưa rồi mới tiến hành merge code và approve the pull request. Mục này sẽ demo lại quá trình push code, pull request của nhân viên, leader sẽ xem và fetch code về local test.  
+
+* **Nhân viên code và pull request như đã làm.**  
+
+	![Imgur](https://i.imgur.com/tXZ3cdl.png)  
+	
+	![Imgur](https://i.imgur.com/YWcPyOK.png)  
+
+	![Imgur](https://i.imgur.com/m5PdAbR.png)  
+
+	![Imgur](https://i.imgur.com/RZzsneb.png)  
+
+	![Imgur](https://i.imgur.com/IEb4P7g.png)  
+
+	![Imgur](https://i.imgur.com/WVGd7uN.png)
+
+	![Imgur](https://i.imgur.com/GES0diA.png)  
+
+	![Imgur](https://i.imgur.com/X284qnW.png)  
+ 
+* **Leader review code online and fetch branch into local to test code offline**   
+	* **Fetching**  
+		* Khi thực hiện pull, merge nội dung của remote repository sẽ tự động được tiến hành. Tuy nhiên, cũng có trường hợp chỉ đơn giản muốn kiểm tra nội dung của remote repository mà không muốn merge. Những lúc như vậy hãy sử dụng fetch.
+		* Khi thực hiện fetch, chỉ có thể tiến hành lấy lịch sử mới nhất của remote repository. Commit đã lấy, sẽ được đưa vào như nhánh không tên. Branch này có thể checkout bằng tên là FETCH_HEAD.
+		* Ví dụ, với mỗi origin của local repository và remote repository, khi tiến hành fetch với trạng thái có commit tiến triển từ B, thì sẽ thành lịch sử giống như sơ đồ bên dưới.  
+![Imgur](https://i.imgur.com/NsXhBAt.png)  
+		* Từ trạng thái này, trường hợp tích hợp nội dung của remote repository vào master của local repository thì sẽ merge FETCH_HEAD hoặc pull lại.  
+![Imgur](https://i.imgur.com/rVLuvdr.png)
+
+
+ 
+	![Imgur](https://i.imgur.com/QNYXQFV.png)  
 
 	
-	
+
+
+
 	
