@@ -356,10 +356,11 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 ![Imgur](https://i.imgur.com/NsXhBAt.png)  
 		* Từ trạng thái này, trường hợp tích hợp nội dung của remote repository vào master của local repository thì sẽ merge FETCH_HEAD hoặc pull lại.  
 ![Imgur](https://i.imgur.com/rVLuvdr.png)
-
-
- 
+	* **Leader review code online**
 	![Imgur](https://i.imgur.com/QNYXQFV.png)  
+	* **Leader fetch branch into local to test code offline**  
+	![Imgur](https://i.imgur.com/fKcG9Mc.png)  
+* Sau khi leader test code thành công thì sẽ lại tiến đến những bước cuối như phần review code online (nhận xét sau đó merge pull,... mình không nhắc lại).
 
 	
 
