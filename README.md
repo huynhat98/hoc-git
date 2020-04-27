@@ -89,22 +89,22 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	![Imgur](https://i.imgur.com/03GTCgr.png)
 
 ### 7. BRANCH – Kỹ thuật phân nhánh
-![Imgur](https://i.imgur.com/6a1IFPH.png)
+![Imgur](https://i.imgur.com/6a1IFPH.png)  
 
 ![Imgur](https://i.imgur.com/ZnAidkS.png)  
 
 ![Imgur](https://i.imgur.com/XadmsqW.png)  
 
-* vd: Khi ta làm 1 project có nhiều trang nhiều chức năng, thường mỗi khi viết 1 chức năng nào đó ta sẽ làm ra 1 branch mới để nó không bị ảnh hưởng đến nhánh chính master, cho đến khi ta code hoàn thành xong chức năng không có lỗi và hài lòng với thay đổi những commit trên các nhánh khác thì lúc đó ta mới tiến hành ghép vào nhánh master...đảm bảo cho nhánh master không bị lỗi gì. cũng như đi làm leader cũng chia project ra những branch khác nhau tùy với chức năng mà thành viên viết rồi quản lý các commit của các thành viên đến khi nào không lỗi lầm thì mới ghép vào nhánh master... giúp quản lý dự án tốt hơn.
+* vd: Khi ta làm 1 project có nhiều trang nhiều chức năng, thường mỗi khi viết 1 chức năng nào đó ta sẽ làm ra 1 branch mới để nó không bị ảnh hưởng đến nhánh chính master, cho đến khi ta code hoàn thành xong chức năng không có lỗi và hài lòng với thay đổi những commit trên các nhánh khác thì lúc đó ta mới tiến hành ghép vào nhánh master...đảm bảo cho nhánh master không bị lỗi gì.  
 
-* Cách tạo 1 branch: **"git branch tên_branch"**
+* Cách tạo 1 branch: **"git branch tên_branch"**  
 	* ```$ git branch feature/dog-class```  
  
 	![Imgur](https://i.imgur.com/0A8nLoN.png)  
 
 	kiểm tra và thấy có 1 branch mới được tạo nhưng ta vẫn ở branch cũ master.
 	![Imgur](https://i.imgur.com/icc2Kak.png)
-* Để chuyển brank, truy cập kiểm tra mã nguồn trong branch đó để làm việc: **"git checkout tên_branch"**
+* Để chuyển brank, truy cập kiểm tra mã nguồn trong branch đó để làm việc: **"git checkout tên_branch"**  
 	![Imgur](https://i.imgur.com/zYuQ65R.png)
 	* ngoài ra ta có thể làm tắt vừa tạo vừa chuyển qua branch mới:  
 	```$ git checkout -b feature/dog-class```   
@@ -114,11 +114,16 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 	![Imgur](https://i.imgur.com/1JMOzcq.png)
 
-* Khi ta đã code thành công, đã hài lòng ở các branch phụ, ta sẽ tiến hành gộp (merge) nó vào branch chính (master)(kéo những thay đổi từ 1 branch khác vào 1 branch nào đấy không nhất thiết phải là master).
-	* merge theo trình tự đang ở branch A thì merge branch B vào A (vd ta muốn merge branch feature/dog-class vào branch chính master để đồng bộ thì ta kiểm tra xem ta đã đứng ở branch master chưa nếu chưa thì checkout về master sau đó dùng lệnh merge branch feature/dog-class bây giờ dữ liệu code đã được đồng bộ từ feature/dog-class vào master và code 2 bên là giống nhau).  
+* Khi ta đã code thành công, đã hài lòng ở các branch phụ, ta sẽ tiến hành gộp (merge) nó vào branch chính (master)(kéo những thay đổi từ 1 branch khác vào 1 branch nào đấy không nhất thiết phải là master).  
+	* merge theo trình tự đang ở branch A thì merge branch B vào A (vd ta muốn merge branch feature/dog-class vào branch chính master để đồng bộ thì ta kiểm tra xem ta đã đứng ở branch master chưa nếu chưa thì checkout về master sau đó dùng lệnh merge branch feature/dog-class bây giờ dữ liệu code đã được đồng bộ từ feature/dog-class vào master và code 2 bên là giống nhau).   
 	```$ git merge feature/dog-class```
 
-		![Imgur](https://i.imgur.com/lNnPqRV.png)
+		![Imgur](https://i.imgur.com/lNnPqRV.png)  
+
+* **Xóa branch**:
+	`$ git branch -d <branchname>`
+
+	![Imgur](https://i.imgur.com/ygDZA3B.png)  
 
 ### 8. Git Reset
 
@@ -129,17 +134,17 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	* **```git reset --soft commit_Id```** nó sẽ quay lại commit có id mà ta chỉ định và nó sẽ mở, hủy đi tất cả các commit mà bạn đã commit sau cái commit mà bạn đã chỉ định và các file sẽ trở về staging Area (đã được add nhưng chưa commit lên lan9). VD: Ta đã commit với nhãn là lan9 giờ ta sẽ trở về lúc commit mà nhãn là lan8 bằng cách dùng lệnh trên và đánh id của commit lan8 vào nó sẽ trở về commit lan8 và hủy commit lan9.    
 	![Imgur](https://i.imgur.com/w0nUQGp.png)   
 
-		![Imgur](https://i.imgur.com/0IzX9h6.png)
+		![Imgur](https://i.imgur.com/0IzX9h6.png)  
 
-		![Imgur](https://i.imgur.com/jl1dbTu.png)
+		![Imgur](https://i.imgur.com/jl1dbTu.png)  
 		
-		![Imgur](https://i.imgur.com/4AMkChn.png)
+		![Imgur](https://i.imgur.com/4AMkChn.png)  
 	
 	* **```git reset --mixed commit_Id```** cũng tương tự như reset --soft trên nhưng chỉ khác là các file được add trong lan8 de lên lan9 không còn ở trong staging Area nữa mà trở về working drectory luôn (nghĩa là các file sẽ trở về luôn trạng thái ở lần 8 vì nó không tồn tại trong working drectory luôn nên chắc chắn mọi thay đổi sẽ quay về).
-	![Imgur](https://i.imgur.com/FaBFzDu.png)
+	![Imgur](https://i.imgur.com/FaBFzDu.png)  
 	
 	* **```git reset --hard commit_Id```** tương tự nhưng trạng thái của commit sẽ biến mất sạch sẽ và không còn file nào trong staging area hoặc working directory luôn.
-	![Imgur](https://i.imgur.com/pjXPpPB.png)	
+	![Imgur](https://i.imgur.com/pjXPpPB.png)  	
 	
 ### 9. Git revert
 * nghĩa là trả lại revert lại trạng thái lúc trước (vd: viết ra 1 dòng mà thấy sai không ok thì ta có thể revert lại, quay lại trạng thái trước khi có dòng đấy, xóa nó đi chẳng hạn.). Dùng trong trường hợp 1 commit cách đây vài commit mà muốn bỏ nó đi (bỏ đi những thay đổi mà lần commit đó đã commit đã thay đổi) => nó rất nguy hiểm nên tránh dùng. (dùng reset thì tất cả commit sau nó bị mất đi. Trong trường hợp không muốn nó bị mất đi mà chỉ muốn reset lại 1 commit trong số đó thì ta dùng revert). Nó sẽ tạo ra 1 commit mới đảo ngược lại commit mình muốn revert (dùng chính id commit mà ta muốn revert về).  
@@ -181,9 +186,9 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 ![Imgur](https://i.imgur.com/5Dd7ii6.png)   
 
 * Đa phần vẫn nhầm lẫn Git vs GitHub là một bởi vì cứ nói đến Git là nghĩ tới GitHub. Đó là một sự hiểu lầm vì Git  là tên gọi của một mô hình hệ thống, các máy tính có thể clone lại mã nguồn từ một repository , còn GitHub là tên của một công ty cũng cấp dịch vụ máy chủ repository công cộng, mỗi người có thể truy cập vào website trang chủ để tạo tài khoản trên đó và tạo ra kho chứa source của riêng mình khi làm việc.
-	* [https://github.com/](https://github.com/ "Link to Githup")
+	* [Trang chủ Github](https://github.com/ "Link to Githup")
 * Tạo repository trên Github và làm việc.
-	![Imgur](https://i.imgur.com/GYsotUO.png)
+	![Imgur](https://i.imgur.com/GYsotUO.png)  
 
 	![Imgur](https://i.imgur.com/Jr71f0z.png)
 * Demo cách đưa code lên Githup cơ bản.
@@ -230,8 +235,90 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 		
 		![Imgur](https://i.imgur.com/CxOHpUB.png)  
 * **git pull**  
-	* Nếu bạn đang làm việc chung với cả một team, bạn sẽ nhận thấy, khi repo được cập nhật lên GitHub, thì các thay đổi sẽ không còn local nữa. Nếu đúng như vậy, bạn có thể sử dụng **`git pull origin branch_name`** để pull các thay đổi gần nhất từ remote branch đó.  
+	* Nếu bạn đang làm việc chung với cả một team, bạn sẽ nhận thấy, khi repo được cập nhật lên GitHub, thì các thay đổi sẽ không còn local nữa. Nếu đúng như vậy, bạn có thể sử dụng **`git pull remote_origin branch_name`** để pull các thay đổi gần nhất từ remote branch đó.  
 		* Ở bên repo chính ta tiến hành commit và push cập nhật lại remote repo.  
 		![Imgur](https://i.imgur.com/wHVDIZv.png)
 		* Ở repo local mà ta clone ra ta tiến hành git pull lấy cập nhật mới nhất từ repo remote vừa được update kia về.
-		![Imgur](https://i.imgur.com/7KKTkuh.png)
+		![Imgur](https://i.imgur.com/7KKTkuh.png)  
+
+### 14. Pull request (teamwork)  
+![Imgur](https://i.imgur.com/im0oOF5.png) 
+
+* Khi làm teamwork thì leader sẽ chia project ra từng phần, ra nhiều branch trên github phụ thuộc vào chức năng bạn làm có thể là login, thanh toán hay giỏ hàng,...  sau đó bạn sẽ lên git hub lấy branch của mình về làm, làm xong bạn thấy không có lỗi thì tiến hành commit và push brach đó lên repo remote của team, tạo ra 1 pull request để leader tiến hành test code. Leader nhận được pull request thì tiến hành test và review code, review code online trên github, nếu ổn thì leader fetch branch về local để test offline nếu tất cả code, chức năng chạy tốt thì leader sẽ approve pull request của bạn. Sau đó leader tiến hành merge branch bạn code vào branch master(branch chính).  
+
+####a. Tạo branch, xử lý ở local repo
+
+* Có nhiều cách leader có thể tạo các branch xong bạn clone về làm rồi push lên lại. Ở đây thì bên nhân viên sẽ tạo 1 branch sau đó push lên sau ( việc này tương tự như đã làm ở local repo).  
+`$ git checkout -b <feature_branch>`  
+ 
+	![Imgur](https://i.imgur.com/f7jf3BL.png)  
+* Code feature theo yêu cầu đến khi nào hoàn thành không còn bug thì push lên remote repo.   
+	![Imgur](https://i.imgur.com/ujuxoIy.png)  
+
+	![Imgur](https://i.imgur.com/1rBXibA.png)
+	
+####b. push lên remote repo (github)
+* Dùng lệnh **`git push remote_origin branch_name`** để push code sau khi commit xong lên github.
+	* github khi ta chưa push branch lên (chỉ có 1 branch master).  
+	![Imgur](https://i.imgur.com/4Zqvo4y.png)  
+	* push branch lên github.  
+	![Imgur](https://i.imgur.com/83dmzc4.png)  
+	* github khi ta push branch lên (ngoài branch master còn có thêm branch feature/horse-class.  
+	![Imgur](https://i.imgur.com/EzGRFwC.png)  
+
+####c. Creat a pull request on github and Review code online
+* Mình sẽ tạo 1 yêu cầu để được pull code cho leader biết mình đã commit. sau khi leader nhận được sẽ tiến hành review code này xem đủ yêu cầu được pull chưa. Ta tạo pull request bắng giao diện như các hình dưới đây. 
+   
+* **Nhân viên tạo pull request.**  
+
+	![Imgur](https://i.imgur.com/dmWlESI.png)   
+
+	![Imgur](https://i.imgur.com/kMoPmZh.png)   
+
+* **Leader review code online.**    
+
+	![Imgur](https://i.imgur.com/gvjuM8H.png)  
+
+	![Imgur](https://i.imgur.com/obelDIj.png)  
+
+	![Imgur](https://i.imgur.com/5fmlRqL.png)  
+
+	![Imgur](https://i.imgur.com/LgWn5Tz.png)  
+
+	![Imgur](https://i.imgur.com/epyENjB.png)  
+
+	![Imgur](https://i.imgur.com/4oOg7BL.png)  
+
+	![Imgur](https://i.imgur.com/nRTv5WZ.png)  
+
+	![Imgur](https://i.imgur.com/aAgjNUU.png)  
+
+	![Imgur](https://i.imgur.com/vsaa0jR.png)  
+
+	![Imgur](https://i.imgur.com/dt0gyQj.png)   
+
+* **Nhân viên xem nhận xét của leader và sửa code sau đó commit và push code lên cho leader xem lại**
+	
+	![Imgur](https://i.imgur.com/TYOJnJM.png)  
+	
+	![Imgur](https://i.imgur.com/E8wVMcu.png)
+
+* **Leader review lại và nếu ổn thì merge vào master**  
+
+	![Imgur](https://i.imgur.com/4GmcrOj.png)  
+
+	![Imgur](https://i.imgur.com/qFFY1ax.png)  
+	
+	![Imgur](https://i.imgur.com/8dp6YKM.png)  
+
+	![Imgur](https://i.imgur.com/tJLzYNz.png)  
+
+	![Imgur](https://i.imgur.com/vyDAVPz.png)  
+
+	![Imgur](https://i.imgur.com/2dIK9L6.png)  
+
+	![Imgur](https://i.imgur.com/SgH7CSi.png)
+
+	
+	
+	
