@@ -246,7 +246,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 * Khi làm teamwork thì leader sẽ chia project ra từng phần, ra nhiều branch trên github phụ thuộc vào chức năng bạn làm có thể là login, thanh toán hay giỏ hàng,...  sau đó bạn sẽ lên git hub lấy branch của mình về làm, làm xong bạn thấy không có lỗi thì tiến hành commit và push brach đó lên repo remote của team, tạo ra 1 pull request để leader tiến hành test code. Leader nhận được pull request thì tiến hành test và review code, review code online trên github, nếu ổn thì leader fetch branch về local để test offline nếu tất cả code, chức năng chạy tốt thì leader sẽ approve pull request của bạn. Sau đó leader tiến hành merge branch bạn code vào branch master(branch chính).  
 
-####a. Tạo branch, xử lý ở local repo
+#### a. Tạo branch, xử lý ở local repo
 
 * Có nhiều cách leader có thể tạo các branch xong bạn clone về làm rồi push lên lại. Ở đây thì bên nhân viên sẽ tạo 1 branch sau đó push lên sau ( việc này tương tự như đã làm ở local repo).  
 `$ git checkout -b <feature_branch>`  
@@ -257,7 +257,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 	![Imgur](https://i.imgur.com/1rBXibA.png)
 	
-####b. push lên remote repo (github)
+#### b. push lên remote repo (github)
 * Dùng lệnh **`git push remote_origin branch_name`** để push code sau khi commit xong lên github.
 	* github khi ta chưa push branch lên (chỉ có 1 branch master).  
 	![Imgur](https://i.imgur.com/4Zqvo4y.png)  
@@ -266,7 +266,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	* github khi ta push branch lên (ngoài branch master còn có thêm branch feature/horse-class.  
 	![Imgur](https://i.imgur.com/EzGRFwC.png)  
 
-####c. Creat a pull request on github and Review code online
+#### c. Creat a pull request on github and Review code online
 * Mình sẽ tạo 1 yêu cầu để được pull code cho leader biết mình đã commit. sau khi leader nhận được sẽ tiến hành review code này xem đủ yêu cầu được pull chưa. Ta tạo pull request bắng giao diện như các hình dưới đây. 
    
 * **Nhân viên tạo pull request.**  
