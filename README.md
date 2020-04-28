@@ -363,9 +363,86 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 * Sau khi leader test code thành công thì sẽ lại tiến đến những bước cuối như phần review code online (nhận xét sau đó merge pull,... mình không nhắc lại).  
 ### 15. Resolve Conflicts   
 ![Imgur](https://i.imgur.com/tXoHNMu.png)  
+
+* Khi làm việc nhóm, pull, push, merge code, sẽ có trường hợp hai người cùng chỉnh sửa một file, một dòng code, khi đồng bộ sẽ xảy ra xung đột (conflict).
+* Khi bạn làm việc với nhiều branch, nhảy qua nhảy về, commit, sửa chung một dòng code, cũng sẽ xảy ra conflict.
+* Trên đây là hai tình huống thường gặp về git conflict.  
 #### a) Resolve conflict using git rebase  
+![Imgur](https://i.imgur.com/dCBW511.png)  
+ 
+* Git Rebase là một chức năng được dùng khi gắn nhánh đã hoàn thành công việc vào nhánh gốc . Về mặt nội dung thì là việc điều chỉnh nhánh công việc gắn vào với nhánh gốc nên các commit sẽ được đăng kí theo thứ tự gắn vào . Chính vì thế sẽ có đặc trưng là dễ nhìn hơn sau khi xác nhận commit.  
+* khi sử dụng git rebase để hợp nhất 2 nhánh lại thì bạn sẽ có một lịch sử đẹp hơn, thằng hàng hơn và dễ nhìn hơn git merge. Nhưng rebasing đúng như cái nghĩa đen của nó là phá hủy, nó di chuyển toàn bộ nhánh mà bạn muốn hợp nhất lên đầu nhánh chính và viết lại lịch sử commit của nhánh đó.
+* Hãy nhớ rằng bạn chỉ nên dùng git rebase trong nhánh của riêng bạn và đừng dùng nó với bất cứ thứ dùng đã được đẩy lên remote nếu không muốn bị mọi người trong team ghét. Và nếu bạn chưa hiểu nhiều về rebasing thì tốt nhất bạn nên sử dụng merging vì nó an toàn hơn.  
 
+* Ở đây ta demo 2 nhân viên A,B code 2 branch khác nhau với 2 feature khác nhau là feature/horse-run và feature/horse-jump. Cả hai cùng thay đổi 1 file Horse.js rồi commit và gửi pull request lên branch master của remote repo. Vậy khi master của remote repo được merge với feature/horse-jumb thì master của remote repo đã bị thay đổi, lúc merge với feature/horse-run thì sẽ có conflict xảy ra.  
 
+	![Imgur](https://i.imgur.com/MqS0PCj.png)  
+
+* Nhân viên A tạo branch feature/horse-run và code thêm method run cho file Horse.js. sau đó gửi pull request lên remote repo.  
+
+	![Imgur](https://i.imgur.com/uAGk0Ls.png)  
+
+	![Imgur](https://i.imgur.com/FrkyRsp.png)  
+
+	![Imgur](https://i.imgur.com/EMmTTAD.png)  
+
+	![Imgur](https://i.imgur.com/Mul2cVP.png)  
+* Nhân viên B tạo branch feature/horse-jump và code thêm method jump cho file Horse.js. sau đó cũng gửi pull request lên remote repo.
+	
+	![Imgur](https://i.imgur.com/vDqV8DK.png)  
+
+	![Imgur](https://i.imgur.com/pOvuNp0.png)  
+
+	![Imgur](https://i.imgur.com/mjzH87L.png)  
+
+	![Imgur](https://i.imgur.com/cA2FAtw.png)  
+
+* Ta có được 2 pull request từ 2 branch feature/horse-run và feature/horse-jump.
+	
+	![Imgur](https://i.imgur.com/4Owtkum.png)    
+
+* Ta tiến hành merge feature/jump vào master của remote repo.
+
+	![Imgur](https://i.imgur.com/9h8taA3.png)  
+
+* Lúc này branch master của remote repo đã thay đổi vì đã merge feature/horse-jump vào. cụ thể là file Horse.js đã thay đổi. Bây giờ ta tiếp tục merge branch feature/horse-run vào thì sẽ thấy gây ra conflict.   
+	![Imgur](https://i.imgur.com/MqS0PCj.png)  
+
+	![Imgur](https://i.imgur.com/gkDTqaz.png)  
+
+	![Imgur](https://i.imgur.com/hdwTVHz.png)
+	
+* Để resolve conflict này ta sẽ về repo của branch feature/horse-run (nơi cần giải quyết xung đột để được merge vào master của remote repo). từ đây ta chuyển về branch master của repo này rồi tiến hành pull tới master của remote repo để đồng bộ. 
+
+	![Imgur](https://i.imgur.com/pueJSkw.png)  
+
+* Sau đó chuyển về branch feature/horse-run và tiến hành rebase master xem thử file nào bị conflict và conflict chỗ nào để tiến hành chỉnh sửa loại bỏ conflict.  
+
+	![Imgur](https://i.imgur.com/xH61FvJ.png)  
+
+* Ta thấy vấn đề ở file Horse.js ta tiến hành xem xét và chỉnh sửa file theo ý muốn để tiến hành rebase.
+	
+	![Imgur](https://i.imgur.com/0Us98I7.png)  
+
+	![Imgur](https://i.imgur.com/0rz1TGc.png)  
+
+* Sau khi sửa xong ta tiến hành commit thay đổi và git rebase --continue  
+	
+	![Imgur](https://i.imgur.com/ErdJKtY.png)  
+
+* Sau khi rebase thành công ta tiến hành gửi pull request feature/horse-run lên remote repo với hậu tố -f (vì lịch sử thay đổi) và ta thấy merge đã thành công.
+
+	![Imgur](https://i.imgur.com/GxQrClo.png)  
+	
+	![Imgur](https://i.imgur.com/qcEJTFx.png)  
+
+	![Imgur](https://i.imgur.com/MvkRG3X.png)  
+
+	![Imgur](https://i.imgur.com/A0rfo86.png)  
+
+	![Imgur](https://i.imgur.com/7A7w8TL.png)
+
+	![Imgur](https://i.imgur.com/VHjLTqL.png)
 	
 
 
