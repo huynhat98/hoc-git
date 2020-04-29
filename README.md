@@ -442,7 +442,9 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 	![Imgur](https://i.imgur.com/7A7w8TL.png)
 
-	![Imgur](https://i.imgur.com/VHjLTqL.png)
+	![Imgur](https://i.imgur.com/VHjLTqL.png)  
+
+#### b) Resolve conflict using Merge
 	
 
 
