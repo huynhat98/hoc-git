@@ -361,12 +361,17 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	* **Leader fetch branch into local to test code offline**  
 	![Imgur](https://i.imgur.com/fKcG9Mc.png)  
 * Sau khi leader test code thành công thì sẽ lại tiến đến những bước cuối như phần review code online (nhận xét sau đó merge pull,... mình không nhắc lại).  
-### 15. Resolve Conflicts   
-![Imgur](https://i.imgur.com/tXoHNMu.png)  
-
+### 15. Resolve Conflicts  
 * Khi làm việc nhóm, pull, push, merge code, sẽ có trường hợp hai người cùng chỉnh sửa một file, một dòng code, khi đồng bộ sẽ xảy ra xung đột (conflict).
 * Khi bạn làm việc với nhiều branch, nhảy qua nhảy về, commit, sửa chung một dòng code, cũng sẽ xảy ra conflict.
-* Trên đây là hai tình huống thường gặp về git conflict.  
+* Trên đây là hai tình huống thường gặp về git conflict. 
+
+	![Imgur](https://i.imgur.com/tXoHNMu.png)   
+
+* Đầu tiên, cần phải hiểu rõ rằng git rebase cũng giải quyết những vấn đề tương tự với git merge. Cả 2 câu lệnh đều được tạo ra để tích hợp những thay đổi từ 1 nhánh vào 1 nhánh khác. Nhưng chúng làm theo cách khác nhau Khi bạn đang làm code 1 chức năng bục mặt ở một branch Feature. Một ngày đẹp trời, 1 thằng trong team bạn update branch master với vài commit mới, vậy để tích hợp những commit đó cũng như tránh việc conflict sau này, bạn phải làm gì. Có 2 lựa chọn cho bạn: merging hoặc rebasing    
+
+	![Imgur](https://i.imgur.com/vcwckcV.png)
+   
 #### a) Resolve conflict using git rebase  
 ![Imgur](https://i.imgur.com/dCBW511.png)  
  
@@ -432,7 +437,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 * Sau khi rebase thành công ta tiến hành gửi pull request feature/horse-run lên remote repo với hậu tố -f (vì lịch sử thay đổi) và ta thấy merge đã thành công.
 
-	![Imgur](https://i.imgur.com/GxQrClo.png)  
+	![Imgur](https://i.imgur.com/sWlX7tP.png) 
 	
 	![Imgur](https://i.imgur.com/qcEJTFx.png)  
 
@@ -442,9 +447,13 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 	![Imgur](https://i.imgur.com/7A7w8TL.png)
 
-	![Imgur](https://i.imgur.com/VHjLTqL.png)  
+	![Imgur](https://i.imgur.com/VHjLTqL.png)    
 
-#### b) Resolve conflict using Merge
+* Nếu có vấn đề gì xảy ra trong quá trình rebase thì bạn có thể hủy quá trình rebase bằng lệnh bên dưới.  
+	`git rebase --abort`
+
+#### b) Resolve conflict using Merge  
+![Imgur](https://i.imgur.com/2ZNLVnR.png)
 	
 
 
