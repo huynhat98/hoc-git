@@ -455,7 +455,10 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 #### b) Resolve conflict using Merge  
 ![Imgur](https://i.imgur.com/2ZNLVnR.png)
 	
+* Cũng gặp conflict như trường hợp trên nhưng ta sẽ giải quyết confict này bằng Merge.
+* **Ưu điêm:** Merging không làm thay đổi hệ thống. Những nhánh đang tồn tại sẽ không bị ảnh hưởng gì cả. 
+* **Nhược điểm:** Branch Feature sẽ có thêm 1 commit merge mỗi lần bạn cần tích hợp những thay đổi từ các nhánh khác vào nó. Nếu branch master liên tục bị thay đổi thì lịch sử commit của branch Feature sẽ rất khó nhìn. Nó sẽ gây rất nhiều khó khăn trong việc xem lại lịch sử commit của dự án  
 
-
+* Ta sẽ demo 
 
 	
