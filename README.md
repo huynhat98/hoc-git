@@ -60,6 +60,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
  * **Staging Area** nghĩa là khu vực sẽ lưu trữ những thay đổi của bạn trên tập tin để nó có thể được commit, vì muốn commit tập tin nào thì tập tin đó phải nằm trong Staging Area. Một tập tin khi nằm trong Staging Area sẽ có trạng thái là Stagged (xem thêm ở dưới).  
 ![Imgur](https://i.imgur.com/CIRSnlT.png)  
 	Và để đưa một tập tin vào Staging Area thì bạn sẽ cần phải sử dụng lệnh git add tên_file mà mình đã có ví dụ phía dưới.  
+
 **[⬆ back to top](#table-of-contents)**
 ### 4. Tạo local repository bằng "git add":
 <a name="muc4"></a>
@@ -71,6 +72,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	```$ git add *``` hoặc ```$ git add .```  
 	![Imgur](https://i.imgur.com/RT4OaTL.png)  
 
+**[⬆ back to top](#table-of-contents)** 
 <a name="muc5"></a>
 ### 5. "git commit":
 * **commit:** nghĩa là một hành động để Git lưu lại một bản chụp (snapshot) của các sự thay đổi trong thư mục làm việc, và các tập tin và thư mục được thay đổi đã phải nằm trong Staging Area. Mỗi lần commit nó sẽ được lưu lại lịch sử chỉnh sửa của mã nguồn kèm theo tên và địa chỉ email của người commit. Ngoài ra trong Git bạn cũng có thể khôi phục lại tập tin trong lịch sử commit của nó để chia cho một phân nhánh (branch) khác, đây là mấu chốt của việc bạn sẽ dễ dàng khôi phục lại các thay đổi trước đó mà mình có giới thiệu qua ở phần giới thiệu serie này.  
@@ -82,8 +84,9 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 	![Imgur](https://i.imgur.com/eYFDIOp.png)  
 
-* Nếu có file nào được thêm hay thay đổi ta update bằng cách add rồi commit lại (kiểm tra bằng git status).
+* Nếu có file nào được thêm hay thay đổi ta update bằng cách add rồi commit lại (kiểm tra bằng git status).  
 
+**[⬆ back to top](#table-of-contents)**
 <a name="muc6"></a>
 ### 6. Log  
 * Để xem lịch sử của các lần commit trước đó, bạn sử dụng lệnh "git log".  
@@ -116,6 +119,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	
 	![Imgur](https://i.imgur.com/03GTCgr.png)
 
+**[⬆ back to top](#table-of-contents)**
 <a name="muc7"></a>
 ### 7. Branch – Kỹ thuật phân nhánh
 ![Imgur](https://i.imgur.com/6a1IFPH.png)  
@@ -154,6 +158,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 	![Imgur](https://i.imgur.com/ygDZA3B.png)  
 
+**[⬆ back to top](#table-of-contents)**
+
 <a name = "muc8"></a>
 ### 8. Git Reset
 * **Bỏ tập tin ra khỏi Staging Area** (chuyển 1 file đã git add rồi về trạng thái trước đó):
@@ -175,7 +181,9 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	
 	* **```git reset --hard commit_Id```** tương tự nhưng trạng thái của commit sẽ biến mất sạch sẽ và không còn file nào trong staging area hoặc working directory luôn.
 	![Imgur](https://i.imgur.com/pjXPpPB.png)  	
-	
+
+**[⬆ back to top](#table-of-contents)**
+
 <a name="muc9"></a>
 ### 9. Git revert  
 * nghĩa là trả lại revert lại trạng thái lúc trước (vd: viết ra 1 dòng mà thấy sai không ok thì ta có thể revert lại, quay lại trạng thái trước khi có dòng đấy, xóa nó đi chẳng hạn.). Dùng trong trường hợp 1 commit cách đây vài commit mà muốn bỏ nó đi (bỏ đi những thay đổi mà lần commit đó đã commit đã thay đổi) => nó rất nguy hiểm nên tránh dùng. (dùng reset thì tất cả commit sau nó bị mất đi. Trong trường hợp không muốn nó bị mất đi mà chỉ muốn reset lại 1 commit trong số đó thì ta dùng revert). Nó sẽ tạo ra 1 commit mới đảo ngược lại commit mình muốn revert (dùng chính id commit mà ta muốn revert về).  
@@ -190,6 +198,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	* Dùng :wq như vi để lưu ta kiểm tra lại và thu được một commit revert từ commit hồi nãy.
 	
 	![Imgur](https://i.imgur.com/DLWOQLn.png)
+
+**[⬆ back to top](#table-of-contents)**
 
 <a name="muc10"></a>
 ### 10. gitignore  
@@ -213,6 +223,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 		![Imgur](https://i.imgur.com/QoXjZcT.png)  
 	* Lúc này ta gõ lại git status lại và thấy node_modules đã biến mất khỏi local repository
 	![Imgur](https://i.imgur.com/7bdycCF.png)  
+
+**[⬆ back to top](#table-of-contents)**
 
 <a name="muc11"></a>
 ### 11. Github  
@@ -245,6 +257,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 	![Imgur](https://i.imgur.com/plPWHyB.png)
 
+**[⬆ back to top](#table-of-contents)**
+
 <a name="muc12"></a>  
 ### 12. Git credential config  
 * Cài đặt Git credential helper. Một số Git clound hỗ trợ kết nối đến bằng HTTP, mỗi khi tương tác với các Git clound này cần sử dụng username/password. Bạn có thể lưu trữ lại chứng nhận thay cho việc phải cung cấp username/password. Git credential Manager sẽ quản lý các chứng nhận đó. 
@@ -254,6 +268,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	![Imgur](https://i.imgur.com/ZcGxhiX.png)
 	
 	![Imgur](https://i.imgur.com/qOQBh7n.png)  
+
+**[⬆ back to top](#table-of-contents)**
 
 <a name="muc13"></a>
 ### 13. Git clone & pull  
@@ -275,6 +291,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 		![Imgur](https://i.imgur.com/wHVDIZv.png)
 		* Ở repo local mà ta clone ra ta tiến hành git pull lấy cập nhật mới nhất từ repo remote vừa được update kia về.
 		![Imgur](https://i.imgur.com/7KKTkuh.png)  
+
+**[⬆ back to top](#table-of-contents)**
 
 <a name="muc14"></a>
 ### 14. Pull request (teamwork)  
@@ -397,6 +415,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	* **Leader fetch branch into local to test code offline**  
 	![Imgur](https://i.imgur.com/fKcG9Mc.png)  
 * Sau khi leader test code thành công thì sẽ lại tiến đến những bước cuối như phần review code online (nhận xét sau đó merge pull,... mình không nhắc lại).  
+
+**[⬆ back to top](#table-of-contents)**
 
 <a name="muc15"></a> 
 ### 15. Resolve Conflicts 
@@ -557,6 +577,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 	![Imgur](https://i.imgur.com/XI2u9iT.png)   
 
+**[⬆ back to top](#table-of-contents)**
+
 <a name="muc16"></a>
 ### 16. Một số vấn đề khác (Các bạn tự search với keyword)
 
@@ -586,3 +608,5 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 * [Demo reactJs Page](https://byenet.github.io/BaiTapGioHangReact/ "Demo reactjs Huy đẹp trai")
 
 #### i) Fork git đóng góp cho cộng đồng. 
+
+**[⬆ back to top](#table-of-contents)**
