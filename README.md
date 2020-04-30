@@ -3,21 +3,44 @@
 
 ## *Nhật Huy* 
   
-![Imgur](https://i.imgur.com/j5awM87.png)    
+![Imgur](https://i.imgur.com/j5awM87.png)   
 
-### 1. Thiết lập chứng thực cá nhân
+### Mục lục   
+####I. Local repository 
+- **1. [Thiết lập chứng thực cá nhân](#muc1)**   
+- **2. [git init](#muc2)**  
+- **3. [git status](#muc3)**  
+- **4. [Tạo local repository bằng "git add"](#muc4)**  
+- **5. [git commit](#muc5)**  
+- **6. [Log](#muc6)**  
+- **7. [Branch – Kỹ thuật phân nhánh](#muc7)**  
+- **8. [Git Reset](#muc8)**  
+- **9. [Git revert](#muc8)** 
+- **10. [gitignore](#muc10)**  
+
+####II. Remote repository  
+- **11. [Github](#muc11)**  
+- **12. [Git credential config](#muc12)**  
+- **13. [Git clone & pull](#muc13)** 
+- **14. [Pull request (teamwork)](#muc14)**  
+- **15. [Resolve Conflicts](#muc15)**  
+- **16. [Một số vấn đề khác](#muc16)**  
+
+<a name="muc1"></a>
+### 1. Thiết lập chứng thực cá nhân  
 ```
 $ git config --global user.name "byenet" 
 ```  
 ``` 
 $ git config --global user.email "nhathuynguyenho@gmail.com"
 ```
-
+<a name="muc2"></a>
 ### 2. "git init":
 * Lệnh khởi tạo sử dụng GIT repository cho thư mục hiện tại.  
-	* ```$ git init```  
-### 3. "git status":   
+	* ```$ git init``` 
 
+<a name="muc3"></a> 
+### 3. "git status":   
 ![Imgur](https://i.imgur.com/MXClLDR.png)
 
 * Dùng để xem status của git project.  
@@ -37,6 +60,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 ![Imgur](https://i.imgur.com/CIRSnlT.png)  
 	Và để đưa một tập tin vào Staging Area thì bạn sẽ cần phải sử dụng lệnh git add tên_file mà mình đã có ví dụ phía dưới.
 ### 4. Tạo local repository bằng "git add":
+<a name="muc4"></a>
 * git add README.md  
 	* Thêm file README.md vào cho GIT quản lý (Staging Area).  
 	```$ git add README.md```    
@@ -45,6 +69,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	```$ git add *``` hoặc ```$ git add .```  
 	![Imgur](https://i.imgur.com/RT4OaTL.png)  
 
+<a name="muc5"></a>
 ### 5. "git commit":
 * **commit:** nghĩa là một hành động để Git lưu lại một bản chụp (snapshot) của các sự thay đổi trong thư mục làm việc, và các tập tin và thư mục được thay đổi đã phải nằm trong Staging Area. Mỗi lần commit nó sẽ được lưu lại lịch sử chỉnh sửa của mã nguồn kèm theo tên và địa chỉ email của người commit. Ngoài ra trong Git bạn cũng có thể khôi phục lại tập tin trong lịch sử commit của nó để chia cho một phân nhánh (branch) khác, đây là mấu chốt của việc bạn sẽ dễ dàng khôi phục lại các thay đổi trước đó mà mình có giới thiệu qua ở phần giới thiệu serie này.  
 
@@ -57,6 +82,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 * Nếu có file nào được thêm hay thay đổi ta update bằng cách add rồi commit lại (kiểm tra bằng git status).
 
+<a name="muc6"></a>
 ### 6. Log  
 * Để xem lịch sử của các lần commit trước đó, bạn sử dụng lệnh "git log".  
 	* ```$ git log```  
@@ -88,7 +114,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	
 	![Imgur](https://i.imgur.com/03GTCgr.png)
 
-### 7. BRANCH – Kỹ thuật phân nhánh
+<a name="muc7"></a>
+### 7. Branch – Kỹ thuật phân nhánh
 ![Imgur](https://i.imgur.com/6a1IFPH.png)  
 
 ![Imgur](https://i.imgur.com/ZnAidkS.png)  
@@ -102,8 +129,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
  
 	![Imgur](https://i.imgur.com/0A8nLoN.png)  
 
-	kiểm tra và thấy có 1 branch mới được tạo nhưng ta vẫn ở branch cũ master.
-	![Imgur](https://i.imgur.com/icc2Kak.png)
+	kiểm tra và thấy có 1 branch mới được tạo nhưng ta vẫn ở branch cũ master.  
+	![Imgur](https://i.imgur.com/icc2Kak.png)  
 * Để chuyển brank, truy cập kiểm tra mã nguồn trong branch đó để làm việc: **"git checkout tên_branch"**  
 	![Imgur](https://i.imgur.com/zYuQ65R.png)
 	* ngoài ra ta có thể làm tắt vừa tạo vừa chuyển qua branch mới:  
@@ -125,20 +152,21 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 	![Imgur](https://i.imgur.com/ygDZA3B.png)  
 
+<a name = "muc8"></a>
 ### 8. Git Reset
-
 * **Bỏ tập tin ra khỏi Staging Area** (chuyển 1 file đã git add rồi về trạng thái trước đó):
 	* Nếu bạn đã đưa một tập tin nào đó vào Staging Area nhưng bây giờ bạn muốn loại bỏ nó ra khỏi đây để không phải bị commit theo thì có thể sử dụng lệnh **"git reset HEAD tên_file"**.   
 	![Imgur](https://i.imgur.com/UmnOdos.png)  
-* **Undo commit**
-	* **```git reset --soft commit_Id```** nó sẽ quay lại commit có id mà ta chỉ định và nó sẽ mở, hủy đi tất cả các commit mà bạn đã commit sau cái commit mà bạn đã chỉ định và các file sẽ trở về staging Area (đã được add nhưng chưa commit lên lan9). VD: Ta đã commit với nhãn là lan9 giờ ta sẽ trở về lúc commit mà nhãn là lan8 bằng cách dùng lệnh trên và đánh id của commit lan8 vào nó sẽ trở về commit lan8 và hủy commit lan9.    
-	![Imgur](https://i.imgur.com/w0nUQGp.png)   
+* **Undo commit**  
+	* **```git reset --soft commit_Id```** nó sẽ quay lại commit có id mà ta chỉ định và nó sẽ mở, hủy đi tất cả các commit mà bạn đã commit sau cái commit mà bạn đã chỉ định và các file sẽ trở về staging Area (đã được add nhưng chưa commit lên lan9). VD: Ta đã commit với nhãn là lan9 giờ ta sẽ trở về lúc commit mà nhãn là lan8 bằng cách dùng lệnh trên và đánh id của commit lan8 vào nó sẽ trở về commit lan8 và hủy commit lan9. 
+	    
+		![Imgur](https://i.imgur.com/w0nUQGp.png)   
 
 		![Imgur](https://i.imgur.com/0IzX9h6.png)  
 
 		![Imgur](https://i.imgur.com/jl1dbTu.png)  
 		
-		![Imgur](https://i.imgur.com/4AMkChn.png)  
+		![Imgur](https://i.imgur.com/4AMkChn.png)    
 	
 	* **```git reset --mixed commit_Id```** cũng tương tự như reset --soft trên nhưng chỉ khác là các file được add trong lan8 de lên lan9 không còn ở trong staging Area nữa mà trở về working drectory luôn (nghĩa là các file sẽ trở về luôn trạng thái ở lần 8 vì nó không tồn tại trong working drectory luôn nên chắc chắn mọi thay đổi sẽ quay về).
 	![Imgur](https://i.imgur.com/FaBFzDu.png)  
@@ -146,7 +174,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	* **```git reset --hard commit_Id```** tương tự nhưng trạng thái của commit sẽ biến mất sạch sẽ và không còn file nào trong staging area hoặc working directory luôn.
 	![Imgur](https://i.imgur.com/pjXPpPB.png)  	
 	
-### 9. Git revert
+<a name="muc9"></a>
+### 9. Git revert  
 * nghĩa là trả lại revert lại trạng thái lúc trước (vd: viết ra 1 dòng mà thấy sai không ok thì ta có thể revert lại, quay lại trạng thái trước khi có dòng đấy, xóa nó đi chẳng hạn.). Dùng trong trường hợp 1 commit cách đây vài commit mà muốn bỏ nó đi (bỏ đi những thay đổi mà lần commit đó đã commit đã thay đổi) => nó rất nguy hiểm nên tránh dùng. (dùng reset thì tất cả commit sau nó bị mất đi. Trong trường hợp không muốn nó bị mất đi mà chỉ muốn reset lại 1 commit trong số đó thì ta dùng revert). Nó sẽ tạo ra 1 commit mới đảo ngược lại commit mình muốn revert (dùng chính id commit mà ta muốn revert về).  
 	* **```git revert commit_Id```**  
 
@@ -160,7 +189,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	
 	![Imgur](https://i.imgur.com/DLWOQLn.png)
 
-### 10. gitignore
+<a name="muc10"></a>
+### 10. gitignore  
 * .gitignore là 1 file nằm trong project của mình. mục đích là để ta có thể bỏ qua 1 số file mà ta không muốn commit, nó sẽ không hiển thị ra mỗi khi ta gõ git status (ví dụ khi dùng node packet thì sẽ có file node module và file này khá nặng và chỉ là source các module, ta khai báo file này vào .gitignore thì nó sẽ không commit theo, khi đẩy code lên remote server thì nó sẽ không tồn tại trên đó mà ta chỉ commit file package.json file này sẽ lưu toàn bộ cấu hình của node module. lúc cần thì kéo về và gõ lệnh npm install là các package lại được cài lại và file node modules lại tồn tại.
 	* khởi tạo project node và download chalk module để demo:  
 	![Imgur](https://i.imgur.com/0uC47NN.png)
@@ -182,7 +212,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	* Lúc này ta gõ lại git status lại và thấy node_modules đã biến mất khỏi local repository
 	![Imgur](https://i.imgur.com/7bdycCF.png)  
 
-### 11. Github
+<a name="muc11"></a>
+### 11. Github  
 ![Imgur](https://i.imgur.com/5Dd7ii6.png)   
 
 * Đa phần vẫn nhầm lẫn Git vs GitHub là một bởi vì cứ nói đến Git là nghĩ tới GitHub. Đó là một sự hiểu lầm vì Git  là tên gọi của một mô hình hệ thống, các máy tính có thể clone lại mã nguồn từ một repository , còn GitHub là tên của một công ty cũng cấp dịch vụ máy chủ repository công cộng, mỗi người có thể truy cập vào website trang chủ để tạo tài khoản trên đó và tạo ra kho chứa source của riêng mình khi làm việc.
@@ -211,7 +242,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 `$ git remote rm remote_name`  
 
 	![Imgur](https://i.imgur.com/plPWHyB.png)
-	
+
+<a name="muc12"></a>  
 ### 12. Git credential config  
 * Cài đặt Git credential helper. Một số Git clound hỗ trợ kết nối đến bằng HTTP, mỗi khi tương tác với các Git clound này cần sử dụng username/password. Bạn có thể lưu trữ lại chứng nhận thay cho việc phải cung cấp username/password. Git credential Manager sẽ quản lý các chứng nhận đó. 
 	* `git config --global credential.helper "cache --timeout=18000"`  
@@ -221,6 +253,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	
 	![Imgur](https://i.imgur.com/qOQBh7n.png)  
 
+<a name="muc13"></a>
 ### 13. Git clone & pull  
 ![Imgur](https://i.imgur.com/EB876Nv.png)   
   
@@ -241,6 +274,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 		* Ở repo local mà ta clone ra ta tiến hành git pull lấy cập nhật mới nhất từ repo remote vừa được update kia về.
 		![Imgur](https://i.imgur.com/7KKTkuh.png)  
 
+<a name="muc14"></a>
 ### 14. Pull request (teamwork)  
 ![Imgur](https://i.imgur.com/im0oOF5.png) 
 
@@ -362,7 +396,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	![Imgur](https://i.imgur.com/fKcG9Mc.png)  
 * Sau khi leader test code thành công thì sẽ lại tiến đến những bước cuối như phần review code online (nhận xét sau đó merge pull,... mình không nhắc lại).  
 
-### 15. Resolve Conflicts  
+<a name="muc15"></a> 
+### 15. Resolve Conflicts 
 * Khi làm việc nhóm, pull, push, merge code, sẽ có trường hợp hai người cùng chỉnh sửa một file, một dòng code, khi đồng bộ sẽ xảy ra xung đột (conflict).
 * Khi bạn làm việc với nhiều branch, nhảy qua nhảy về, commit, sửa chung một dòng code, cũng sẽ xảy ra conflict.
 * Trên đây là hai tình huống thường gặp về git conflict. 
@@ -520,6 +555,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 	![Imgur](https://i.imgur.com/XI2u9iT.png)   
 
+<a name="muc16"></a>
 ### 16. Một số vấn đề khác (Các bạn tự search với keyword)
 
 #### a) Tìm hiểu ngôn ngữ Markdown  
@@ -540,4 +576,11 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 #### f) Phân quyền admin cho member  
 #### g) Tìm hiểu một số remote repo khác như gitlap, Bitbucket,...
 #### h) deploy web tĩnh lên github.
+* [Cách deploy static web site](https://www.youtube.com/watch?v=8hrJ4oN1u_8 "Link hướng dẫn ")  
+* [Demo bài của mình](https://byenet.github.io/BootstrapLayoutFilm.github.io/ "Demo của Huy đẹp trai")
+* [Cách deploy reactjs web](https://www.youtube.com/watch?v=F8s4Ng-re0E "Link hướng dẫn")  
+* [https://github.com/gitname/react-gh-pages](https://github.com/gitname/react-gh-pages "link doc english")
+* [https://viblo.asia/p/deploy-ung-dung-reactjs-len-github-pages-1VgZvw3MlAw](https://viblo.asia/p/deploy-ung-dung-reactjs-len-github-pages-1VgZvw3MlAw "link hướng dẫn tiếng Việt")
+* [Demo reactJs Page](https://byenet.github.io/BaiTapGioHangReact/ "Demo reactjs Huy đẹp trai")
 
+#### i) Fork git đóng góp cho cộng đồng. 
