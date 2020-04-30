@@ -361,6 +361,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	* **Leader fetch branch into local to test code offline**  
 	![Imgur](https://i.imgur.com/fKcG9Mc.png)  
 * Sau khi leader test code thành công thì sẽ lại tiến đến những bước cuối như phần review code online (nhận xét sau đó merge pull,... mình không nhắc lại).  
+
 ### 15. Resolve Conflicts  
 * Khi làm việc nhóm, pull, push, merge code, sẽ có trường hợp hai người cùng chỉnh sửa một file, một dòng code, khi đồng bộ sẽ xảy ra xung đột (conflict).
 * Khi bạn làm việc với nhiều branch, nhảy qua nhảy về, commit, sửa chung một dòng code, cũng sẽ xảy ra conflict.
@@ -459,6 +460,64 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 * **Ưu điểm:** Merging không làm thay đổi hệ thống. Những nhánh đang tồn tại sẽ không bị ảnh hưởng gì cả. 
 * **Nhược điểm:** Branch Feature sẽ có thêm 1 commit merge mỗi lần bạn cần tích hợp những thay đổi từ các nhánh khác vào nó. Nếu branch master liên tục bị thay đổi thì lịch sử commit của branch Feature sẽ rất khó nhìn. Nó sẽ gây rất nhiều khó khăn trong việc xem lại lịch sử commit của dự án  
 
-* Ta sẽ demo 
+* Ta sẽ demo tương tự như mục a, 2 nhân viên A,B code 2 branch khác nhau với 2 feature khác nhau là feature/mouse-run và feature/mouse-sleep. Cả hai cùng thay đổi 1 file Mouse.js rồi commit và gửi pull request lên branch master của remote repo. Vậy khi master của remote repo được merge với feature/mouse-sleep thì master của remote repo đã bị thay đổi, lúc merge với feature/mouse-run thì sẽ có conflict xảy ra.
+  
+	![Imgur](https://i.imgur.com/1pf6s7i.png)  
 
+* Nhân viên A code branch feature/mouse-run thay đổi file Mouse.js và commit push lên remote server.
+
+	![Imgur](https://i.imgur.com/JCNuIvM.png)  
+
+	![Imgur](https://i.imgur.com/HOCyaKC.png)  
+
+* Nhân viên B code branch feature/mouse-sleep thay đổi file Muose.js và commit push lên remote server.
+
+	![Imgur](https://i.imgur.com/AvQjS5l.png)  
+
+	![Imgur](https://i.imgur.com/FECwxec.png)  
+
+* Tiến hành creat pull request và merge pull request của feature/mouse-sleep trước
 	
+	![Imgur](https://i.imgur.com/Fc7EpPy.png)  
+
+	![Imgur](https://i.imgur.com/0Jkqs8W.png)  
+  
+	![Imgur](https://i.imgur.com/GVQRfgo.png)  
+
+* Lúc này file Mouse.js của remote repo đã bị thay đổi nếu ta tiếp tục merge feature/mouse-sleep vào thì sẽ gây ra conflict.
+	
+	![Imgur](https://i.imgur.com/h8GgLBH.png)  
+	
+	![Imgur](https://i.imgur.com/d6o262u.png)  
+
+	![Imgur](https://i.imgur.com/kxDa2BT.png)  
+
+* Để giải quyết xung đột ta về branch nơi mà cần merge vào branch master của remote repo để giải quyết, ta về branch feature/mouse-run và chuyển về branch master sau đó đồng bộ với remote repo bằng cách pull.
+
+	![Imgur](https://i.imgur.com/ozcC29e.png)  
+
+* Sau đó ta chuyển về branch bị conflict khi merge là branch feature/mouse-run và đánh lệnh merge vào master để xem file nào bị conflict.
+	
+	![Imgur](https://i.imgur.com/Wvw4yFp.png)  
+
+* Ta thấy file Mouse.js bị conflict ta vào file Mouse.js và chỉnh sửa theo ý mình để hết conflict.
+
+	![Imgur](https://i.imgur.com/efdN0JY.png)  
+
+	![Imgur](https://i.imgur.com/fmoC0xd.png)  
+
+* Sau khi chỉnh sửa phù hợp thì ta tiến hành commit lại và tiếp tục tạo pull request lên master của remote repo (lúc push không cần -f vì lịch sử không bị gộp).
+
+	![Imgur](https://i.imgur.com/zdlQ0A3.png)
+
+	![Imgur](https://i.imgur.com/rzQaG6D.png)
+
+* Ta thấy merge pull request thành công và không còn conflict.
+	
+	![Imgur](https://i.imgur.com/k8NKnGh.png)  
+
+	![Imgur](https://i.imgur.com/mPgMTJX.png)
+
+	![Imgur](https://i.imgur.com/XI2u9iT.png)   
+
+### 16. Một số vấn đề khác
