@@ -520,4 +520,24 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 	![Imgur](https://i.imgur.com/XI2u9iT.png)   
 
-### 16. Một số vấn đề khác
+### 16. Một số vấn đề khác (Các bạn tự search với keyword)
+
+#### a) Tìm hiểu ngôn ngữ Markdown  
+#### b) Xác thực bằng SSH, Liên kết với tài khoản github bằng SSH.
+#### c) Viết wiki page
+
+![Imgur](https://i.imgur.com/1JiZtEB.png)  
+
+#### d) Làm việc với Tag trong Git  
+#### e) Quản lý Task làm việc nhóm  
+
+![Imgur](https://i.imgur.com/yxH0D6g.png)  
+
+![Imgur](https://i.imgur.com/3fuG7qg.png)
+  
+![Imgur](https://i.imgur.com/bPbDMdU.png)  
+
+#### f) Phân quyền admin cho member  
+#### g) Tìm hiểu một số remote repo khác như gitlap, Bitbucket,...
+#### h) deploy web tĩnh lên github.
+
