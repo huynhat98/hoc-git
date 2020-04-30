@@ -1,12 +1,13 @@
-# <span style = "color:green;  text-align: center;display: block; text-transform: uppercase;">How to use git</span>
+# <h1 align = "center">HOW TO USE GIT</h1>
 <br/>  
 
 ## *Nhật Huy* 
   
 ![Imgur](https://i.imgur.com/j5awM87.png)   
 
+<a name="table-of-contents"></a>
 ### Mục lục   
-####I. Local repository 
+#### I. Local repository 
 - **1. [Thiết lập chứng thực cá nhân](#muc1)**   
 - **2. [git init](#muc2)**  
 - **3. [git status](#muc3)**  
@@ -18,7 +19,7 @@
 - **9. [Git revert](#muc8)** 
 - **10. [gitignore](#muc10)**  
 
-####II. Remote repository  
+#### II. Remote repository  
 - **11. [Github](#muc11)**  
 - **12. [Git credential config](#muc12)**  
 - **13. [Git clone & pull](#muc13)** 
@@ -58,7 +59,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 * **Staging Area** là gì?
  * **Staging Area** nghĩa là khu vực sẽ lưu trữ những thay đổi của bạn trên tập tin để nó có thể được commit, vì muốn commit tập tin nào thì tập tin đó phải nằm trong Staging Area. Một tập tin khi nằm trong Staging Area sẽ có trạng thái là Stagged (xem thêm ở dưới).  
 ![Imgur](https://i.imgur.com/CIRSnlT.png)  
-	Và để đưa một tập tin vào Staging Area thì bạn sẽ cần phải sử dụng lệnh git add tên_file mà mình đã có ví dụ phía dưới.
+	Và để đưa một tập tin vào Staging Area thì bạn sẽ cần phải sử dụng lệnh git add tên_file mà mình đã có ví dụ phía dưới.  
+**[⬆ back to top](#table-of-contents)**
 ### 4. Tạo local repository bằng "git add":
 <a name="muc4"></a>
 * git add README.md  
