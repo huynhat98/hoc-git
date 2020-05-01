@@ -5,6 +5,8 @@
   
 ![Imgur](https://i.imgur.com/j5awM87.png)   
 
+----------
+
 <a name="table-of-contents"></a>
 ### Mục lục   
 #### I. Local repository 
@@ -27,6 +29,11 @@
 - **15. [Resolve Conflicts](#muc15)**  
 - **16. [Một số vấn đề khác](#muc16)**  
 
+
+
+----------
+ 
+
 <a name="muc1"></a>
 ### 1. Thiết lập chứng thực cá nhân  
 ```
@@ -35,10 +42,15 @@ $ git config --global user.name "byenet"
 ``` 
 $ git config --global user.email "nhathuynguyenho@gmail.com"
 ```
+
+----------
+
 <a name="muc2"></a>
 ### 2. "git init":
 * Lệnh khởi tạo sử dụng GIT repository cho thư mục hiện tại.  
 	* ```$ git init``` 
+
+----------
 
 <a name="muc3"></a> 
 ### 3. "git status":   
@@ -62,6 +74,9 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	Và để đưa một tập tin vào Staging Area thì bạn sẽ cần phải sử dụng lệnh git add tên_file mà mình đã có ví dụ phía dưới.  
 
 **[⬆ back to top](#table-of-contents)**
+
+----------
+
 ### 4. Tạo local repository bằng "git add":
 <a name="muc4"></a>
 * git add README.md  
@@ -73,6 +88,9 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	![Imgur](https://i.imgur.com/RT4OaTL.png)  
 
 **[⬆ back to top](#table-of-contents)** 
+
+----------
+
 <a name="muc5"></a>
 ### 5. "git commit":
 * **commit:** nghĩa là một hành động để Git lưu lại một bản chụp (snapshot) của các sự thay đổi trong thư mục làm việc, và các tập tin và thư mục được thay đổi đã phải nằm trong Staging Area. Mỗi lần commit nó sẽ được lưu lại lịch sử chỉnh sửa của mã nguồn kèm theo tên và địa chỉ email của người commit. Ngoài ra trong Git bạn cũng có thể khôi phục lại tập tin trong lịch sử commit của nó để chia cho một phân nhánh (branch) khác, đây là mấu chốt của việc bạn sẽ dễ dàng khôi phục lại các thay đổi trước đó mà mình có giới thiệu qua ở phần giới thiệu serie này.  
@@ -87,6 +105,9 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 * Nếu có file nào được thêm hay thay đổi ta update bằng cách add rồi commit lại (kiểm tra bằng git status).  
 
 **[⬆ back to top](#table-of-contents)**
+
+----------
+
 <a name="muc6"></a>
 ### 6. Log  
 * Để xem lịch sử của các lần commit trước đó, bạn sử dụng lệnh "git log".  
@@ -120,6 +141,9 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	![Imgur](https://i.imgur.com/03GTCgr.png)
 
 **[⬆ back to top](#table-of-contents)**
+
+----------
+
 <a name="muc7"></a>
 ### 7. Branch – Kỹ thuật phân nhánh
 ![Imgur](https://i.imgur.com/6a1IFPH.png)  
@@ -160,6 +184,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 **[⬆ back to top](#table-of-contents)**
 
+---------
+
 <a name = "muc8"></a>
 ### 8. Git Reset
 * **Bỏ tập tin ra khỏi Staging Area** (chuyển 1 file đã git add rồi về trạng thái trước đó):
@@ -184,6 +210,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 **[⬆ back to top](#table-of-contents)**
 
+----------
+
 <a name="muc9"></a>
 ### 9. Git revert  
 * nghĩa là trả lại revert lại trạng thái lúc trước (vd: viết ra 1 dòng mà thấy sai không ok thì ta có thể revert lại, quay lại trạng thái trước khi có dòng đấy, xóa nó đi chẳng hạn.). Dùng trong trường hợp 1 commit cách đây vài commit mà muốn bỏ nó đi (bỏ đi những thay đổi mà lần commit đó đã commit đã thay đổi) => nó rất nguy hiểm nên tránh dùng. (dùng reset thì tất cả commit sau nó bị mất đi. Trong trường hợp không muốn nó bị mất đi mà chỉ muốn reset lại 1 commit trong số đó thì ta dùng revert). Nó sẽ tạo ra 1 commit mới đảo ngược lại commit mình muốn revert (dùng chính id commit mà ta muốn revert về).  
@@ -200,6 +228,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	![Imgur](https://i.imgur.com/DLWOQLn.png)
 
 **[⬆ back to top](#table-of-contents)**
+
+----------
 
 <a name="muc10"></a>
 ### 10. gitignore  
@@ -225,6 +255,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	![Imgur](https://i.imgur.com/7bdycCF.png)  
 
 **[⬆ back to top](#table-of-contents)**
+
+----------
 
 <a name="muc11"></a>
 ### 11. Github  
@@ -259,6 +291,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 **[⬆ back to top](#table-of-contents)**
 
+----------
+ 
 <a name="muc12"></a>  
 ### 12. Git credential config  
 * Cài đặt Git credential helper. Một số Git clound hỗ trợ kết nối đến bằng HTTP, mỗi khi tương tác với các Git clound này cần sử dụng username/password. Bạn có thể lưu trữ lại chứng nhận thay cho việc phải cung cấp username/password. Git credential Manager sẽ quản lý các chứng nhận đó. 
@@ -271,6 +305,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 **[⬆ back to top](#table-of-contents)**
 
+----------
+ 
 <a name="muc13"></a>
 ### 13. Git clone & pull  
 ![Imgur](https://i.imgur.com/EB876Nv.png)   
@@ -294,6 +330,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 **[⬆ back to top](#table-of-contents)**
 
+----------
+ 
 <a name="muc14"></a>
 ### 14. Pull request (teamwork)  
 ![Imgur](https://i.imgur.com/im0oOF5.png) 
@@ -418,6 +456,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 **[⬆ back to top](#table-of-contents)**
 
+----------
+ 
 <a name="muc15"></a> 
 ### 15. Resolve Conflicts 
 * Khi làm việc nhóm, pull, push, merge code, sẽ có trường hợp hai người cùng chỉnh sửa một file, một dòng code, khi đồng bộ sẽ xảy ra xung đột (conflict).
@@ -579,6 +619,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 
 **[⬆ back to top](#table-of-contents)**
 
+----------
+ 
 <a name="muc16"></a>
 ### 16. Một số vấn đề khác (Các bạn tự search với keyword)
 
@@ -610,3 +652,6 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 #### i) Fork git đóng góp cho cộng đồng. 
 
 **[⬆ back to top](#table-of-contents)**
+
+----------
+ 
