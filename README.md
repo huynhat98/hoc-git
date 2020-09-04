@@ -647,7 +647,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 * [Cách deploy reactjs web](https://www.youtube.com/watch?v=F8s4Ng-re0E "Link hướng dẫn")  
 * [https://github.com/gitname/react-gh-pages](https://github.com/gitname/react-gh-pages "link doc english")
 * [https://viblo.asia/p/deploy-ung-dung-reactjs-len-github-pages-1VgZvw3MlAw](https://viblo.asia/p/deploy-ung-dung-reactjs-len-github-pages-1VgZvw3MlAw "link hướng dẫn tiếng Việt")
-* [Demo reactJs Page](https://byenet.github.io/BaiTapGioHangReact/ "Demo reactjs Huy đẹp trai")
+* [Demo reactJs Page](https://byenet.github.io/GameTaiXiu_ReactRedux/ "Demo reactjs Huy đẹp trai")
 
 #### i) Fork git đóng góp cho cộng đồng. 
 
