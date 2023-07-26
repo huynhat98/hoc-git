@@ -95,7 +95,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 ### 5. "git commit":
 * **commit:** nghĩa là một hành động để Git lưu lại một bản chụp (snapshot) của các sự thay đổi trong thư mục làm việc, và các tập tin và thư mục được thay đổi đã phải nằm trong Staging Area. Mỗi lần commit nó sẽ được lưu lại lịch sử chỉnh sửa của mã nguồn kèm theo tên và địa chỉ email của người commit. Ngoài ra trong Git bạn cũng có thể khôi phục lại tập tin trong lịch sử commit của nó để chia cho một phân nhánh (branch) khác, đây là mấu chốt của việc bạn sẽ dễ dàng khôi phục lại các thay đổi trước đó mà mình có giới thiệu qua ở phần giới thiệu serie này.  
 
-* **"git commit -m":** Lệnh commit sẽ có cấu trúc git commit -m "Lời nhắn", lúc này tất cả các tập đang trong trạng thái tracked (file mới) hoặc một tập tin đã được tracked nhưng có một sự thay đổi mới thì sẽ được commit.   
+* **"git commit -m '...' ":** Lệnh commit sẽ có cấu trúc git commit -m "Lời nhắn", lúc này tất cả các tập đang trong trạng thái tracked (file mới) hoặc một tập tin đã được tracked nhưng có một sự thay đổi mới thì sẽ được commit.   
 	* ```$ git commit -m 'Add_all_file'```      
 
 	![Imgur](https://i.imgur.com/hzKO9X6.png)    
@@ -103,6 +103,10 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	![Imgur](https://i.imgur.com/eYFDIOp.png)  
 
 * Nếu có file nào được thêm hay thay đổi ta update bằng cách add rồi commit lại (kiểm tra bằng git status).  
+
+* **"git commit -a -m '...' ":** Nếu có file nào được thêm hay thay đổi, lệnh này sẽ add luôn những thay đổi đó vào staging area (đỡ phải add). 
+
+* **"git commit -amend -a":** Nếu có file nào được thêm hay thay đổi, mà muốn thêm nó vào commit trước đó luôn không muốn tạo thêm commit thì dùng lệnh này ( "-a" sẽ add luôn những thay đổi đó vào staging area (đỡ phải add)) (khi dùng lệnh này sẽ có phần hiện ra message commit cho mình xem có chỉnh sửa không, nếu có chỉnh sửa message commit thì làm như sài vim của linux ấn "a" để insert sau khi insert ấn "esc" và gõ ":wq" để thoát). 
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -118,6 +122,8 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	* ```$ git log -p```  
 
 	![Imgur](https://i.imgur.com/s61mJ0y.png)
+
+* Hay Dùng nhiều là "git log --oneline" để xem lịch sử cho gọn tiện xem nhanh. 
 
 * Dùng "git show" với id của lần commit để xem chi tiết commit đó.  
 	* ```$ git show d72845cbd2f5856a7815385b03648356affb162d```
@@ -284,6 +290,7 @@ $ git config --global user.email "nhathuynguyenho@gmail.com"
 	![Imgur](https://i.imgur.com/H96m5vP.png)  
 	* Nếu đã sync với repository trước đây thì ta dùng ```git push``` để đẩy code lên.  
 	![Imgur](https://i.imgur.com/eUg3QC6.png)  
+
 * **Xóa remote repository:**  
 `$ git remote rm remote_name`  
 
